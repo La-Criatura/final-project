@@ -41,6 +41,7 @@ router.post('/skills', (req, res, next) => {
 // GET route => to get all the skills
 router.get('/skills', (req, res, next) => {
   Skill.find()
+    .populate('owner')
     .then(allTheSkills => {
       res.json(allTheSkills);
     })

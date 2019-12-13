@@ -9,21 +9,22 @@ class EditSkill extends Component {
     this.state = {
         title: this.props.theSkill.title, 
         description: this.props.theSkill.description,
+        category: this.props.theSkill.category,
         skillPicture: this.props.theSkill.skillPicture
     }
   }
-
     
   handleFormSubmit = (event) => {
     
     const title = this.state.title;
     const description = this.state.description;
     const skillPicture = this.state.skillPicture;
+    const category = this.state.category;
 
 
     event.preventDefault();
 
-    axios.put(`http://localhost:5000/api/skills/${this.props.theSkill._id}`, { title, description, skillPicture }, {withCredentials:true})
+    axios.put(`http://localhost:5000/api/skills/${this.props.theSkill._id}`, { title, description, skillPicture, category }, {withCredentials:true})
     .then( () => {
         this.props.getTheSkill();
         // after submitting the form, redirect to '/Skills'
@@ -44,6 +45,11 @@ class EditSkill extends Component {
     })
   }
 
+  handleChange = (event) => {  
+    const {name, value} = event.target;
+    this.setState({[name]: value});
+}
+
   handleFileUpload = (e) => { 
     const uploadData = new FormData();
   
@@ -62,20 +68,30 @@ class EditSkill extends Component {
     return (
       <div>
         <hr />
-        <h3>Edit Skill</h3>
+        <h3>Editar Habilidad</h3>
         <form onSubmit={this.handleFormSubmit}>
-          <label>Title:</label>
+          <label>Nombre:</label>
           <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)}/>
           <br/>
-          <label>Description:</label>
+          <label>Descripción:</label>
           <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
           <br/>
-          <label>Picture:</label>
+          <label>Categoría:</label>
+          <select name="category" value={this.state.category} onChange={ e => this.handleChange(e)}>
+            <option value="music">Música</option>
+            <option value="sports">Deporte</option>
+            <option value="education ">Educación</option>
+            <option value="cuisine">Cocina</option>
+            <option value="languages">Idiomas</option>
+            <option value="other">Otros</option>
+          </select>
+          <br/>
+          <label>Foto:</label>
           <br/>
           <img src={this.state.skillPicture} alt=""/>
           <input type="file" onChange={ e => this.handleFileUpload(e)}/>
           <br/>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Actualizar" />
         </form>
       </div>
     )

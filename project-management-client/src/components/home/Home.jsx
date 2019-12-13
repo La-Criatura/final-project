@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import HomeTag from './HomeStyles'
-import CustomMap from '../mapComponent/mapComponent'
+import CustomMap from '../map-component/mapComponent'
 
 export default class Home extends Component {
     render() {

@@ -18,17 +18,16 @@ const API_CONFIG = {
 export default class CustomMap extends Component {
     componentWillUnmount() {
         const allScripts = document.getElementsByTagName('script');
-        [].filter.call(
-            allScripts,
-            (scpt) => scpt.src.indexOf(`key=${process.env.REACT_APP_GOOGLE_KEY}`) >= 0
-        )[0].remove();
+        // [].filter.call(
+        //     allScripts,
+        //     (scpt) => scpt.src.indexOf(`key=${process.env.REACT_APP_GOOGLE_KEY}`) >= 0 )[0].remove();
         window.google = {};
     }
     componentDidMount() {
         loadGoogleMapsAPI(API_CONFIG).then(googleMaps => {
             new googleMaps.Map(this.refs.map, OPTIONS);
         }).catch(err => {
-            console.warning('Something went wrong loading the map', err);
+            // console.warning('Something went wrong loading the map', err);
         });
     }
     render() {
