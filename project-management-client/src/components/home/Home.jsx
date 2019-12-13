@@ -7,7 +7,7 @@ export default class Home extends Component {
             <HomeTag>
                 <section>
                     <img src="" alt="" />
-                    <h1>Claim 1</h1>
+                    <h1>Claim 2</h1>
                 </section>
                 <section>
                     <h2>Nuestras Categorías</h2>
