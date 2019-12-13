@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import HomeTag from './HomeStyles'
+import CustomMap from '../map-component/mapComponent'
 
 export default class Home extends Component {
     render() {
@@ -19,7 +20,7 @@ export default class Home extends Component {
                 </section>
                 <section>
                     <h2>Cerca de ti</h2>
-                    <p>Mapa de random habilidades</p>
+                    <p><CustomMap>Habilidades cerca de ti</CustomMap></p>
                 </section>
             </HomeTag>
         )
