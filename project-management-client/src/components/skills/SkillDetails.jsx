@@ -29,11 +29,12 @@ class SkillDetails extends Component {
     if(!this.state.title){
       this.getSingleSkill();
     } else {
-    //                                                    {...props} => so we can have 'this.props.history' in Edit.js
-    //                                                                                          ^
-    //                                                                                          |
-      return <EditSkill theSkill={this.state} getTheSkill={this.getSingleSkill} {...this.props} />
+      if (this.state.owner._id === this.props.loggedInUser._id) {
+        return <EditSkill theSkill={this.state} getTheSkill={this.getSingleSkill} {...this.props} />
+    } else {
+      return <p>No tienes acceso a esta sección</p>
     }
+  }
   }
 
 // DELETE Skill:
@@ -54,7 +55,7 @@ class SkillDetails extends Component {
         <h1>{this.state.title}</h1>
         <p>{this.state.description}</p>
         <div>{this.renderEditForm()} </div>
-        <button onClick={() => this.deleteSkill()}>Delete Skill</button> {/* <== !!! */}
+        <button onClick={() => this.deleteSkill()}>Eliminar Habilidad</button> {/* <== !!! */}
         <br/>
         <Link to={'/skills'}>Back to skills</Link>
       </div>

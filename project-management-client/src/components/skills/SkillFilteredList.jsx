@@ -32,7 +32,7 @@ class SkillFilteredList extends Component {
       <SkillFilteredListTag>
         <ul>
           {this.state.listOfSkills.filter(skill => 
-            skill.owner === this.state._id
+            skill.owner._id === this.state._id
           ).map(skill => {
             return (
               <li key={skill._id}>
