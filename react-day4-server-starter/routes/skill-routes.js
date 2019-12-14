@@ -62,6 +62,7 @@ router.get('/skills/:id', (req, res, next) => {
 
 
   Skill.findById(req.params.id)
+    .populate('owner')
     .then(response => {
       res.status(200).json(response);
     })

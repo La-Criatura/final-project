@@ -46,9 +46,9 @@ export default class SearchBox extends Component {
     render() {
         return (
             <SearchBoxTag>
-                <input className="input is-primary" onChange={(e) => { this.searchSkill(e) }} />
+                <input className="input" onChange={(e) => { this.searchSkill(e) }} />
                 {/* {this.state.skillsToFilter.map((initialSkill, idx) => <div key={idx}> {initialSkill.title}</div>)} */}
-                <Link to={{
+                <Link className="search-btn" to={{
                     pathname: '/search-results',
                     aboutProps: {
                         theFilteredSkills: this.state.skillsToFilter
