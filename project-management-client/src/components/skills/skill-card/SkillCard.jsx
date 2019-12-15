@@ -11,6 +11,7 @@ export default class SkillCard extends Component {
                 <img src={this.props.theSkill.skillPicture} alt="" />
                 <h2>{this.props.theSkill.title}</h2>
                 <p>{this.props.theSkill.description}</p>
+                {/* <p>{this.props.theSkill.direction}</p> */}
             </SkillCardTag>
         )
     }

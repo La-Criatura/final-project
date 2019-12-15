@@ -29,9 +29,9 @@ class Navbar extends Component {
     if (this.state.loggedInUser) {
       return (
         <NavBar>
-        {/* <nav className="navbar is-danger is-full" role="navigation" aria-label="main navigation"> */}
+          {/* <nav className="navbar is-danger is-full" role="navigation" aria-label="main navigation"> */}
           <div className="navbar-item">
-            <SearchBox/>
+            <SearchBox />
           </div>
 
           <div className="navbar-menu">
@@ -48,7 +48,7 @@ class Navbar extends Component {
               </Link>
             </div>
           </div>
-        {/* </nav> */}
+          {/* </nav> */}
 
         </NavBar>
 

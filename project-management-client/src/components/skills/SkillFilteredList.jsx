@@ -27,11 +27,10 @@ class SkillFilteredList extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <SkillFilteredListTag>
         <ul>
-          {this.state.listOfSkills.filter(skill => 
+          {this.state.listOfSkills.filter(skill =>
             skill.owner._id === this.state._id
           ).map(skill => {
             return (
@@ -45,7 +44,7 @@ class SkillFilteredList extends Component {
           }
         </ul>
       </SkillFilteredListTag>
-    
+
 
     )
   }

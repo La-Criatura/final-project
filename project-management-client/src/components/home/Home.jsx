@@ -1,16 +1,25 @@
 import React, { Component } from 'react'
 import HomeTag from './HomeStyles'
-import CustomMap from '../map-component/mapComponent'
+import MapContainer from '../map-component/mapComponent'
+import PlacesAutocomplete from 'react-places-autocomplete'
+
+
+// import CustomMap from '../map-component/mapComponent'
 
 export default class Home extends Component {
+
     render() {
         return (
-            <HomeTag>
+
+            < HomeTag >
+
                 <section>
+
                     <img src="" alt="" />
                     <h1>Claim 2</h1>
                 </section>
                 <section>
+
                     <h2>Nuestras Categorías</h2>
                     <p>Aquí va el Carrousel de Categorías</p>
                 </section>
@@ -20,10 +29,10 @@ export default class Home extends Component {
                 </section>
                 <section>
                     <h2>Cerca de ti</h2>
-
-                    <CustomMap>habilidades cerca de ti</CustomMap>
+                    {/* <MapContainer>
+                    </MapContainer> */}
                 </section>
-            </HomeTag>
+            </HomeTag >
         )
     }
 }

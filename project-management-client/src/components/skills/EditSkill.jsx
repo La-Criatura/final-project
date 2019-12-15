@@ -3,19 +3,20 @@ import axios from 'axios';
 import AuthService from '../auth/auth-service'
 
 class EditSkill extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.service = new AuthService()
     this.state = {
-        title: this.props.theSkill.title, 
-        description: this.props.theSkill.description,
-        category: this.props.theSkill.category,
-        skillPicture: this.props.theSkill.skillPicture
+      title: this.props.theSkill.title,
+      description: this.props.theSkill.description,
+      category: this.props.theSkill.category,
+      skillPicture: this.props.theSkill.skillPicture,
+      //location: this.props.theSkill.location
     }
   }
-    
+
   handleFormSubmit = (event) => {
-    
+
     const title = this.state.title;
     const description = this.state.description;
     const skillPicture = this.state.skillPicture;
@@ -24,60 +25,60 @@ class EditSkill extends Component {
 
     event.preventDefault();
 
-    axios.put(`http://localhost:5000/api/skills/${this.props.theSkill._id}`, { title, description, skillPicture, category }, {withCredentials:true})
-    .then( () => {
+    axios.put(`http://localhost:5000/api/skills/${this.props.theSkill._id}`, { title, description, skillPicture, category }, { withCredentials: true })
+      .then(() => {
         this.props.getTheSkill();
         // after submitting the form, redirect to '/Skills'
-        this.props.history.push('/dashboard');    
-    })
-    .catch( error => console.log(error) )
+        this.props.history.push('/dashboard');
+      })
+      .catch(error => console.log(error))
   }
 
-  handleChangeTitle = (event) => {  
+  handleChangeTitle = (event) => {
     this.setState({
-      title:event.target.value
+      title: event.target.value
     })
   }
 
-  handleChangeDesc = (event) => {  
+  handleChangeDesc = (event) => {
     this.setState({
-      description:event.target.value
+      description: event.target.value
     })
   }
 
-  handleChange = (event) => {  
-    const {name, value} = event.target;
-    this.setState({[name]: value});
-}
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  }
 
-  handleFileUpload = (e) => { 
+  handleFileUpload = (e) => {
     const uploadData = new FormData();
-  
+
     uploadData.append('skillPicture', e.target.files[0])
-   
+
     this.service.handleUpload(uploadData)
-    .then(response => {
-      this.setState({...this.state, skillPicture: response.secure_url})
-    })
-    .catch(err => {
-      console.log("Error while uploading the file: ", err)
-    })
+      .then(response => {
+        this.setState({ ...this.state, skillPicture: response.secure_url })
+      })
+      .catch(err => {
+        console.log("Error while uploading the file: ", err)
+      })
   }
 
-  render(){
+  render() {
     return (
       <div>
         <hr />
         <h3>Editar Habilidad</h3>
         <form onSubmit={this.handleFormSubmit}>
           <label>Nombre:</label>
-          <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)}/>
-          <br/>
+          <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)} />
+          <br />
           <label>Descripción:</label>
           <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
-          <br/>
+          <br />
           <label>Categoría:</label>
-          <select name="category" value={this.state.category} onChange={ e => this.handleChange(e)}>
+          <select name="category" value={this.state.category} onChange={e => this.handleChange(e)}>
             <option value="music">Música</option>
             <option value="sports">Deporte</option>
             <option value="education ">Educación</option>
@@ -85,12 +86,15 @@ class EditSkill extends Component {
             <option value="languages">Idiomas</option>
             <option value="other">Otros</option>
           </select>
-          <br/>
+          <br />
+          {/* <label>Location:</label>
+          <textarea name="location" value={this.state.location} onChange={e => this.handleChange(e)} />
+          <br /> */}
           <label>Foto:</label>
-          <br/>
-          <img src={this.state.skillPicture} alt=""/>
-          <input type="file" onChange={ e => this.handleFileUpload(e)}/>
-          <br/>
+          <br />
+          <img src={this.state.skillPicture} alt="" />
+          <input type="file" onChange={e => this.handleFileUpload(e)} />
+          <br />
           <input type="submit" value="Actualizar" />
         </form>
       </div>

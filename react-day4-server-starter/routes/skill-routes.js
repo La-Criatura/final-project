@@ -15,25 +15,26 @@ router.post('/skills', (req, res, next) => {
   const userId = req.user._id
   // console.log(userId)
   Skill.create({
-      title: req.body.title,
-      description: req.body.description,
-      owner: req.user._id,
-      skillUserRating: 0,
-      averageRating: 0,
-      usedCounter: 0,
-      category: req.body.category,
-      skillPicture: req.body.skillPicture
-      // location: PENDIENTE
-    })
-    .then(response => { 
-      User.findByIdAndUpdate({_id: response.owner}, {$push: {skills: response._id}})
+    title: req.body.title,
+    description: req.body.description,
+    owner: req.user._id,
+    skillUserRating: 0,
+    averageRating: 0,
+    usedCounter: 0,
+    category: req.body.category,
+    skillPicture: req.body.skillPicture,
+    location: req.body.location,
+    address: req.body.address
+  }).then(response => {
+    console.log('Holi')
+    console.log(response)
+    User.findByIdAndUpdate({ _id: response.owner }, { $push: { skills: response._id } })
       .then((userFound) => console.log(userFound))
-      return response
-    })
+    return response
+  })
     .then(response => {
       res.json(response);
-    })
-    .catch(err => {
+    }).catch(err => {
       res.json(err);
     })
 });
@@ -62,6 +63,7 @@ router.get('/skills/:id', (req, res, next) => {
 
 
   Skill.findById(req.params.id)
+    .populate("owner")
     .then(response => {
       res.status(200).json(response);
     })
@@ -115,8 +117,8 @@ router.delete('/skills/:id', (req, res, next) => {
 router.post('/upload', uploader.single("skillPicture"), (req, res, next) => {
 
   if (!req.file) {
-      next(new Error('No file uploaded!'));
-      return;
+    next(new Error('No file uploaded!'));
+    return;
   }
 
   res.json({ secure_url: req.file.secure_url });
