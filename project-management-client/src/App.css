@@ -1,7 +1,9 @@
 
 
-/* .App {
-	display:flex;
-	min-height: 100vh;
-	flex-wrap: wrap;
-} */
+.main-site-container {
+    padding-top: 3rem;
+    background-color: #E7F1FD;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}

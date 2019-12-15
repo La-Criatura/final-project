@@ -39,20 +39,20 @@ class Login extends Component {
             </div>
             <Link to={"/"}> X</Link>
           </header>
-          <section>
-            <form onSubmit={this.handleFormSubmit}>
-              <label>Username:</label>
-              <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
-              <label>Password:</label>
-              <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
-              <input type="submit" value="Inicia Sesión" />
-            </form>
+          <form onSubmit={this.handleFormSubmit}>
+            <label>Username:</label>
+            <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
+            <label>Password:</label>
+            <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
+            <input className="btn login" type="submit" value="Inicia Sesión" />
+          </form>
+          <section className="bottom-section">
             <p>¿No tienes cuenta?</p>
             <Link to={"/signup"}>Regístrate</Link>
           </section>
         </div>
 
-      </LoginTag>
+      </LoginTag >
     )
   }
 }

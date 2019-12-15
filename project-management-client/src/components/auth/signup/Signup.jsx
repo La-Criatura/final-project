@@ -66,10 +66,10 @@ class Signup extends Component {
           <section>
             <form onSubmit={this.handleFormSubmit}>
               <label>Username:</label>
-              <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
+              <input type="text" name="username" autocomplete="off" value={this.state.username} onChange={e => this.handleChange(e)} />
               <label>Password:</label>
               <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
-              <input type="submit" value="Signup" />
+              <input className="btn login" type="submit" value="Signup" />
             </form>
             <p>Already have account?</p>
           <Link to={"/"}> Login</Link>

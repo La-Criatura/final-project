@@ -1,17 +1,18 @@
 import styled from 'styled-components'
 
 const DashboardTag = styled.div`
-    width: 100vw;
-    
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     section.my-skills {
-        border: 1px grey solid;
+        background-color: white;
+        width: 95vw
+        border: 3px #053763 solid;
+        border-radius: 2rem;
         margin: 1rem 2rem;
-        width: 80vw;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -29,13 +30,15 @@ const DashboardTag = styled.div`
     }
 
     section.suggested-skills{
-        border: 1px grey solid;
+        background-color: white;
+        border: 3px #053763 solid;
+        border-radius: 2rem;
         margin: 1rem 2rem;
-        width: 80vw;
+        width: 95vw;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 1rem 0;
+        padding: 2rem;
 
         h2 {
             font-weight: 600;
@@ -49,10 +52,13 @@ const DashboardTag = styled.div`
 
         .category-links {
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 1rem;
-
+            
+    
             li {
+                background-color: #F5CCCC;
                 width: 8rem;
                 height: 8rem;
                 margin: .5rem;
@@ -60,26 +66,98 @@ const DashboardTag = styled.div`
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                
-                border: 1px solid grey;
+                border: 3px solid black;
                 border-radius: 50%
+                cursor: pointer;
+                 
                 img {
                     width: 3rem;
                 }
 
-            }
-        }
-
-        div {
-            width: 100%;
-            ul {
-
-                li {
+                a {
                     display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: black
+                font-weight: 600
+                }
+    
+            }
+    
+            li.music {
+                background-color: #F5CCCC;   
+                a {
+                    text-decoration: none;
+                    color: black
+                    font-weight: 600
                 }
             }
-
+    
+            li.sports {
+                background-color: #F5CCCC;   
+                a {
+                    text-decoration: none;
+                    color: black
+                    font-weight: 600
+                }
+            }
+     
+            li.education {
+                background-color: #F5CCCC;   
+                a {
+                    text-decoration: none;
+                    color: black
+                    font-weight: 600
+                }
+            }
+    
+            li.cuisine {
+                background-color: #F5CCCC;   
+                a {
+                    text-decoration: none;
+                    color: black
+                    font-weight: 600
+                }
+            }
+    
+            li.languages {
+                background-color: #F5CCCC;   
+                a {
+                    text-decoration: none;
+                    color: black
+                    font-weight: 600
+                }
+            }
+    
+            li.other {
+                background-color: #F5CCCC;   
+                a {
+                    text-decoration: none;
+                    color: black
+                    font-weight: 600
+                }
+            }
+    
         }
+ 
+        
+    }
+
+    .btn {
+        box-sizing: border-box;
+        border:3px black solid;
+        color: white;
+        border-radius: 1rem;
+        height: 2.5rem;
+        padding: .35rem 2rem;
+        font-weight: 700;
+    }
+
+    .login {
+        background-color: #053763;
+        font-size: 1rem;
+        cursor: pointer;
     }
 `;
 

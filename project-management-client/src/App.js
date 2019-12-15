@@ -50,7 +50,7 @@ class App extends React.Component {
     this.fetchUser()
     if (this.state.loggedInUser) {
       return (
-        <div className="App">
+        <div className="main-site-container">
           <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
           <Switch>
             <ProtectedRoute user={this.state.loggedInUser} exact path='/search-results' component={SearchBoxResults} />
@@ -67,16 +67,15 @@ class App extends React.Component {
       );
     } else {
       return (
-        <div className="App">
+        <div className="main-site-container">
           <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
           <Switch>
             <Route path='/search-results' component={SearchBoxResults} />
             <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser} />} />
             <Route exact path='/login' render={() => <Login getUser={this.getTheUser} />} />
             <Route exact path='/' render={() => <Home />} />
-            {/* <ProtectedRoute user={this.state.loggedInUser} path='/skills/:id' component={SkillDetails} />
-            <ProtectedRoute user={this.state.loggedInUser} path='/skills' component={SkillList} />
-            <ProtectedRoute userInSession={this.state.loggedInUser} path='/:id' component={EditUser} /> */}
+            <Route exact path='/skills/category/:name' component={CategoryDetails} />
+            <Route exact path='/skills/:id' render={() => <h1>Tienes que registrate para entrar aquí</h1>} />
           </Switch>
           <Footer />
         </div>
