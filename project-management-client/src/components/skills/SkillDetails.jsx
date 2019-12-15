@@ -78,7 +78,7 @@ class SkillDetails extends Component {
         <div>
           <h1>{this.state.title}</h1>
           <p>{this.state.description}</p>
-          <div style={{ height: "60vh", width: "20vw" }}>
+          <div style={{ height: "60vh", width: "70vw" }}>
             <MapContainer location={this.state.location}></MapContainer>
           </div>
           <div>{this.renderEditForm()} </div>

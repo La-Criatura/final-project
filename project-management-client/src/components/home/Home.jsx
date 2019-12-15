@@ -1,15 +1,32 @@
 import React, { Component } from 'react'
 import HomeTag from './HomeStyles'
-import MapContainer from '../map-component/mapComponent'
-import PlacesAutocomplete from 'react-places-autocomplete'
+import axios from 'axios';
 
+// import PlacesAutocomplete from 'react-places-autocomplete'
 
-// import CustomMap from '../map-component/mapComponent'
-import CustomMap from '../map-component/mapComponent'
 import { Link } from 'react-router-dom';
 import RandomSkillsListHome from '../skills/RandomSkillsHome';
+import MapContainerHome from '../map-component/mapComponentHome';
+
 
 export default class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { listOfSkills: [] };
+    }
+
+    getAllSkills = () => {
+        axios.get(`http://localhost:5000/api/skills`, { withCredentials: true })
+            .then(responseFromApi => {
+                this.setState({
+                    listOfSkills: responseFromApi.data
+                })
+            })
+    }
+
+    componentDidMount() {
+        this.getAllSkills();
+    }
 
     render() {
         return (
@@ -42,8 +59,7 @@ export default class Home extends Component {
                 </section>
                 <section>
                     <h2>Cerca de ti</h2>
-                    {/* <MapContainer>
-                    </MapContainer> */}
+                    <MapContainerHome listOfSkills={this.state.listOfSkills}></MapContainerHome>
                 </section>
             </HomeTag >
         )
