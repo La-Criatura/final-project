@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-class MapContainer extends Component {
+class MapContainerHome extends Component {
     constructor(props) {
         super(props)
     }
@@ -19,10 +19,12 @@ class MapContainer extends Component {
         zoom: 15,
     };
 
+
+
     render() {
+
         console.log(this.props)
-        const lat = this.props.location.coordinates[0];
-        const lng = this.props.location.coordinates[1];
+
         return (
             // Important! Always set the container height explicitly
             <div style={{ height: '70vh', width: '100%' }}>
@@ -31,17 +33,22 @@ class MapContainer extends Component {
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}
                 >
-                    <Marker
 
-                        lat={lat}
-                        lng={lng}
-                        name="My Marker"
-                        color="blue"
-                    />
+                    {this.props.listOfSkills.map((skill, idx) => {
+                        return (
+                            <Marker
+                                key={idx}
+                                lat={skill.location.coordinates[0]}
+                                lng={skill.location.coordinates[1]}
+                                name="My Marker"
+                                color="blue"
+                            />)
+                    })}
+
                 </GoogleMapReact>
             </div>
         );
     }
 }
 
-export default MapContainer;
+export default MapContainerHome;
