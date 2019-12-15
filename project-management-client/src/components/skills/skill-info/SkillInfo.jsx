@@ -9,10 +9,10 @@ export default class SkillInfo extends Component {
         return (
             <SkillInfoTag>
                 <ul>
-                    <li>{this.props.theSkill.title}</li>
+                    <li className="skill-title">{this.props.theSkill.title}</li>
                     <li>{this.props.theSkill.owner.username}</li>
-                    <li>Aquí va la categoría</li>
-                    <li>Aquí va el rating</li>
+                    <li>{this.props.theSkill.category}</li>
+                    <li>{this.props.theSkill.averageRating}</li>
                 </ul>
             </SkillInfoTag>
         )

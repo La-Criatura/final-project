@@ -18,7 +18,7 @@ export default class Dashboard extends Component {
                 <section className="my-skills">
                     <h2>Mis habilidades</h2>
                     <SkillFilteredList theUser={this.state}/>
-                    <Link to='/new/skill' style={{ textDecoration: 'none' }}>Añadir Habilidad</Link>
+                    <Link className="btn login" to='/new/skill' style={{ textDecoration: 'none' }}>Añadir Habilidad</Link>
                     
                 </section>
                 <section className="suggested-skills">
@@ -34,7 +34,7 @@ export default class Dashboard extends Component {
                     </ul>
                     <h2>Destacados</h2>
                     <RandomSkillsList/>
-                    <Link to='/skills' style={{ textDecoration: 'none' }}>Ver Más</Link>
+                    <Link className="btn login" to='/skills' style={{ textDecoration: 'none' }}>Ver Más</Link>
                 </section>
             </DashboardTag>
         )

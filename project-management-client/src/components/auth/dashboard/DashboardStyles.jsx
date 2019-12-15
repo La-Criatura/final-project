@@ -102,7 +102,7 @@ const DashboardTag = styled.div`
                     font-weight: 600
                 }
             }
-    
+     
             li.education {
                 background-color: #F5CCCC;   
                 a {
@@ -142,6 +142,22 @@ const DashboardTag = styled.div`
         }
  
         
+    }
+
+    .btn {
+        box-sizing: border-box;
+        border:3px black solid;
+        color: white;
+        border-radius: 1rem;
+        height: 2.5rem;
+        padding: .35rem 2rem;
+        font-weight: 700;
+    }
+
+    .login {
+        background-color: #053763;
+        font-size: 1rem;
+        cursor: pointer;
     }
 `;
 
