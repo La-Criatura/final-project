@@ -12,13 +12,13 @@ export default class EditUser extends Component {
         };
     }
 
-    componentDidMount() {
-        this.getTheUser()
-      }
+    // componentDidMount() {
+    //     this.props.getTheUser()
+    //   }
     
       getTheUser = () => {
         const params = this.state
-        debugger
+       
         axios.get(`http://localhost:5000/api/${params._id}`, {withCredentials: true})
         .then(responseFromApi => {
             const theUser = responseFromApi.data
@@ -30,14 +30,14 @@ export default class EditUser extends Component {
     }
 
     handleFormSubmit = (event) => {
-        const { username, picture, email, city } = this.state
+        const { username, picture, email, city, counter } = this.state
         event.preventDefault()
-        axios.put(`http://localhost:5000/api/${this.props.loggedInUser._id}`, { username, picture, email, city }, { withCredentials: true })
+        axios.put(`http://localhost:5000/api/${this.props.loggedInUser._id}`, { username, picture, email, city, counter }, { withCredentials: true })
             .then(() => {
-                this.setState({ username: username, picture: picture, email: email, city: city });
+                this.setState({ username: username, picture: picture, email: email, city: city, counter: counter });
             })
             .then(() => {
-                this.getTheUser()
+                this.props.getUser(this.state)
                 this.props.history.push('/dashboard')
             })
             .catch(error => console.log(error))

@@ -3,6 +3,7 @@ import axios from 'axios';
 import AuthService from '../auth/auth-service'
 import PlacesAutocomplete from 'react-places-autocomplete';
 import LocationSearchInput from '../map-component/marketMap';
+import SkillDetailsTag from './SkillStyles/SkillDetailsStyles';
 
 
 class AddSkill extends Component {
@@ -64,44 +65,51 @@ class AddSkill extends Component {
   render() {
     let divStyle = { height: "150px" }
     return (
-      <div>
+      
+      <SkillDetailsTag>
+        <h1>Nueva Habilidad</h1>
         <form onSubmit={this.handleFormSubmit}>
-          <label>Title:</label>
-          <input type="text" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
-          <br />
-          <label>Description:</label>
-          <textarea name="description" value={this.state.description} onChange={e => this.handleChange(e)} />
-          <br />
-          <label>Category:</label>
-          <select name="category" value={this.state.category} onChange={e => this.handleChange(e)}>
-            <option value="music">Música</option>
-            <option value="sports">Deporte</option>
-            <option value="education ">Educación</option>
-            <option value="cuisine">Cocina</option>
-            <option value="languages">Idiomas</option>
-            <option value="other">Otros</option>
-          </select>
-          <br />
-          <div style={divStyle}><LocationSearchInput
-            onAddressChange={this.handleAddressChange}
-          >
+          <section className="top-section">
+            <div className="left-section" >
+              <div  className="input-container">
+                <label>Nombre:</label>
+                <input type="text" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
+              </div>
+              <div className="input-container">
+                <label>Descripción:</label>
+                <textarea name="description" value={this.state.description} onChange={e => this.handleChange(e)} />
+              </div>
+            </div>
+            <div className="right-section">
+              <div className="input-container">
+                <label>Categoría:</label>
+                <select name="category" value={this.state.category} onChange={e => this.handleChange(e)}>
+                  <option value="Música">Música</option>
+                  <option value="Deporte">Deporte</option>
+                  <option value="Educación">Educación</option>
+                  <option value="Cocina">Cocina</option>
+                  <option value="Idiomas">Idiomas</option>
+                  <option value="Otros">Otros</option>
+                </select>
+              </div>
+              <div style={divStyle}>
+                <LocationSearchInput onAddressChange={this.handleAddressChange}></LocationSearchInput>
+              </div>
+            </div>
 
-
-
-          </LocationSearchInput></div>
-
-          {/* <PlacesAutocomplete> */}
-          {/* <label>Location:</label>
-          <textarea name="location" value={this.state.location} onChange={e => this.handleChange(e)} />
-          <br /> */}
-          {/* </PlacesAutocomplete> */}
-
-          <label>Picture:</label>
-          <input type="file" onChange={e => this.handleFileUpload(e)} />
-          <br />
+          </section>
+          <section className="bottom-section">
+          <div>
+            <label>Imagen:</label>
+            <input type="file" onChange={e => this.handleFileUpload(e)} />
+          </div>
           <input type="submit" value="Añadir Habilidad" />
+          </section>
         </form>
-      </div>
+      </SkillDetailsTag>
+
+
+
     )
   }
 }

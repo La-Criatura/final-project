@@ -61,6 +61,7 @@ const NavBar = styled.div`
         height: 2.5rem;
         padding: .35rem 2rem;
         font-weight: 700;
+        margin-top: 0;
     }
 
     .login {

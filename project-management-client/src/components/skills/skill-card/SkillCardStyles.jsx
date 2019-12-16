@@ -10,12 +10,23 @@ padding: 2rem;
 box-sizing: border-box;
 background-color: lightgrey;
 color: black;
+.image-container {
+    width: 100%
+    height: 50%
+    margin-bottom: 0.5rem;
+    border: 3px solid grey;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
 img {
-        width: 100%
-        height: 50%
-        margin-bottom: 0.5rem;
-        border: 3px solid grey;
-        background-color: white;
+    object-fit: cover
+    height: 100%    
+    width: 100%
+    object-position: center center;
+         
     }
 
 h2 {
