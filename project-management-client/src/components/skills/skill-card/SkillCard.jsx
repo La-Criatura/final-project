@@ -8,7 +8,7 @@ export default class SkillCard extends Component {
     render() {
         return (
             <SkillCardTag >
-                <img src={this.props.theSkill.skillPicture} alt="" />
+                <div className="image-container"><img src={this.props.theSkill.skillPicture} alt="" /></div>
                 <h2>{this.props.theSkill.title}</h2>
                 <div className="card-data">
                     <p>{this.props.theSkill.owner.username}</p>

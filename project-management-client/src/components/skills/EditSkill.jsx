@@ -79,12 +79,12 @@ class EditSkill extends Component {
           <br />
           <label>Categoría:</label>
           <select name="category" value={this.state.category} onChange={e => this.handleChange(e)}>
-            <option value="music">Música</option>
-            <option value="sports">Deporte</option>
-            <option value="education ">Educación</option>
-            <option value="cuisine">Cocina</option>
-            <option value="languages">Idiomas</option>
-            <option value="other">Otros</option>
+            <option value="Música">Música</option>
+            <option value="Deporte">Deporte</option>
+            <option value="Educación">Educación</option>
+            <option value="Cocina">Cocina</option>
+            <option value="Idiomas">Idiomas</option>
+            <option value="Otros">Otros</option>
           </select>
           <br />
           {/* <label>Location:</label>

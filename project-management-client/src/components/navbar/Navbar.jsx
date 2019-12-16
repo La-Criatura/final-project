@@ -42,6 +42,7 @@ class Navbar extends Component {
       })
   }
 
+
   render() {
     this.fetchUser()
     if (this.state.loggedInUser) {

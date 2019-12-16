@@ -8,18 +8,8 @@ import SkillDetailsTag from "./SkillStyles/SkillDetailsStyles";
 class SkillDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {user: this.props.loggedInUser};
   }
-
-  // componentDidMount() {
-  //   this.getSingleSkill();
-  //   // const prueba = { ...this.state.location };
-  //   // console.log(prueba.coordinates[0]);
-  // }
-
-  //   // componentWillMount() {
-  //   //   this.getSingleSkill();
-  // }
 
   getSingleSkill = () => {
     const { params } = this.props.match;
@@ -54,6 +44,35 @@ class SkillDetails extends Component {
     }
   };
 
+
+  updateCredits = () => {
+    let credit = this.state.owner.credit
+    let counter = this.state.owner.counter
+    counter += 1
+    if(counter%5 === 0) {
+      credit += 2
+    } else {
+      credit += 1
+    }
+  
+    axios.put(`http://localhost:5000/api/${this.state.owner._id}`, {credit, counter}, {withCredentials: true})
+    .then(() => {
+      if(this.state.user.credit <= 0) {
+        alert("No tienes suficientes créditos para realizar esta actividad")
+        this.props.history.push("/dashboard")
+      } else {
+        let userCredit = this.state.user.credit
+        userCredit -=1
+        axios.put(`http://localhost:5000/api/${this.state.user._id}`, {credit: userCredit}, {withCredentials: true})
+        .then(() => {
+          this.setState({user: {...this.state.user, credit: userCredit}})
+          this.props.getUser(this.state.user)
+          this.props.history.push("/dashboard")
+        })
+      }
+    })
+  }
+
   // DELETE Skill:
   deleteSkill = () => {
     const { params } = this.props.match;
@@ -79,15 +98,20 @@ class SkillDetails extends Component {
         <SkillDetailsTag>
           <h1>{this.state.title}</h1>
           <p>{this.state.description}</p>
-          <div style={{ height: "60vh", width: "70vw" }}>
+          <div style={{ height: "auto", width: "70vw" }}>
             <MapContainer location={this.state.location}></MapContainer>
           </div>
-          <div>{this.renderEditForm()} </div>
+          <div>{this.renderEditForm()}</div>
           <button onClick={() => this.deleteSkill()}>
             Eliminar Habilidad
           </button>
           <br />
-          <Link to={"/skills"}>Back to skills</Link>
+
+          <Link to={{pathname: "/chat", aboutProps: {owner: this.state.owner}}}>Chat</Link>
+          <button onClick={() => this.updateCredits()}>
+            Pacto
+          </button>
+          <Link  to={"/skills"}>Back to skills</Link>
         </SkillDetailsTag>
       );
     }

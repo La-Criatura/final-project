@@ -7,9 +7,9 @@ const userSchema = new Schema({
   picture: { type: String, default: 'https://i.stack.imgur.com/l60Hf.png'},
   skills: [{type: Schema.Types.ObjectId, ref:"Skill"}],
   email: { type: String, default: 'email@email.com'},
-  credit: { type: Number, default: 1},
+  credit: { type: Number, default: 3},
   city: { type: String, default: 'City'},
-  counter: Number
+  counter: { type: Number, default: 0}
 }, 
 {
   timestamps: true
