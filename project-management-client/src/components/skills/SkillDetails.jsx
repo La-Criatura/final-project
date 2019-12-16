@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import EditSkill from "./EditSkill";
 import MapContainer from "../map-component/mapComponent";
+import SkillDetailsTag from "./SkillStyles/SkillDetailsStyles";
 
 class SkillDetails extends Component {
   constructor(props) {
@@ -75,7 +76,7 @@ class SkillDetails extends Component {
     } else {
       console.log(this.state.location.coordinates[1]);
       return (
-        <div>
+        <SkillDetailsTag>
           <h1>{this.state.title}</h1>
           <p>{this.state.description}</p>
           <div style={{ height: "60vh", width: "70vw" }}>
@@ -84,11 +85,10 @@ class SkillDetails extends Component {
           <div>{this.renderEditForm()} </div>
           <button onClick={() => this.deleteSkill()}>
             Eliminar Habilidad
-          </button>{" "}
-          {/* <== !!! */}
+          </button>
           <br />
           <Link to={"/skills"}>Back to skills</Link>
-        </div>
+        </SkillDetailsTag>
       );
     }
   }
