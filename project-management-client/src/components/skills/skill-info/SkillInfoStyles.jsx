@@ -7,7 +7,7 @@ border: 3px solid grey;
 background-color: lightgrey;
 border-radius: 1rem;
 margin: 1rem;
-padding: .5rem;
+padding: .3rem;
 box-sizing: border-box;
 display: flex;
 align-items: center;

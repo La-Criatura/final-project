@@ -12,31 +12,31 @@ class MapContainer extends Component {
     }
 
     static defaultProps = {
-        center: {
-            lat: 40.24,
-            lng: -3.70
-        },
+        // center: {
+        //     lat: 40.24,
+        //     lng: -3.70
+        // },
         zoom: 15,
     };
 
     render() {
-        console.log(this.props)
         const lat = this.props.location.coordinates[0];
         const lng = this.props.location.coordinates[1];
+        const center = { lat, lng }
         return (
             // Important! Always set the container height explicitly
             <div style={{ height: '70vh', width: '100%' }}>
                 <GoogleMapReact
                     bootstrapURLKeys={`${process.env.REACT_APP_GOOGLE_KEY}`}
-                    defaultCenter={this.props.center}
+
+                    defaultCenter={center}
                     defaultZoom={this.props.zoom}
                 >
                     <Marker
-
                         lat={lat}
                         lng={lng}
                         name="My Marker"
-                        color="blue"
+                        color="red"
                     />
                 </GoogleMapReact>
             </div>

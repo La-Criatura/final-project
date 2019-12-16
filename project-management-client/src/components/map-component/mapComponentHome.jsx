@@ -28,6 +28,7 @@ class MapContainerHome extends Component {
         return (
             // Important! Always set the container height explicitly
             <div style={{ height: '70vh', width: '100%' }}>
+
                 <GoogleMapReact
                     bootstrapURLKeys={`${process.env.REACT_APP_GOOGLE_KEY}`}
                     defaultCenter={this.props.center}

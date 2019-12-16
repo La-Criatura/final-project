@@ -82,20 +82,7 @@ class AddSkill extends Component {
             <option value="other">Otros</option>
           </select>
           <br />
-          <div style={divStyle}><LocationSearchInput
-            onAddressChange={this.handleAddressChange}
-          >
-
-
-
-          </LocationSearchInput></div>
-
-          {/* <PlacesAutocomplete> */}
-          {/* <label>Location:</label>
-          <textarea name="location" value={this.state.location} onChange={e => this.handleChange(e)} />
-          <br /> */}
-          {/* </PlacesAutocomplete> */}
-
+          <div style={divStyle}><LocationSearchInput onAddressChange={this.handleAddressChange}></LocationSearchInput></div>
           <label>Picture:</label>
           <input type="file" onChange={e => this.handleFileUpload(e)} />
           <br />

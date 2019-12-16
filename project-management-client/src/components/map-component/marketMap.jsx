@@ -10,7 +10,7 @@ import PlacesAutocomplete, {
 import { className } from "./helperMap";
 import "./searchStyle.css"
 
-Geocode.setApiKey(`${process.env.REACT_APP_GOOGLE_KEY}`);
+Geocode.setApiKey("AIzaSyDIDbsMyAFksYgDhGSvow9PBg39Kd4ww0s");
 
 Geocode.setLanguage("es");
 
