@@ -59,6 +59,11 @@ p {
     text-align: left;
 }
 
+.drop-down-menu{
+    background-color: red;
+    width: 26rem;
+}
+
 `;
 
 export default SkillCardTag

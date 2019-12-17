@@ -11,7 +11,7 @@ export default class SkillInfo extends Component {
                 <ul>
                     <li className="skill-title">{this.props.theSkill.title}</li>
                     <li>{this.props.theSkill.owner.username}</li>
-                    <li>{this.props.theSkill.category}</li>
+                    <li>{(this.props.theSkill.category).charAt(0).toUpperCase() + (this.props.theSkill.category).slice(1)}</li>
                     <li>{this.props.theSkill.averageRating}</li>
                 </ul>
             </SkillInfoTag>

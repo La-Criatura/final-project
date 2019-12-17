@@ -3,7 +3,7 @@ import axios from 'axios';
 import AuthService from '../auth/auth-service'
 import PlacesAutocomplete from 'react-places-autocomplete';
 import LocationSearchInput from '../map-component/marketMap';
-import SkillDetailsTag from './SkillStyles/SkillDetailsStyles';
+import AddSkillTag from './SkillStyles/AddSkillStyles';
 
 
 class AddSkill extends Component {
@@ -63,10 +63,10 @@ class AddSkill extends Component {
   }
 
   render() {
-    let divStyle = { height: "150px" }
+    
     return (
       
-      <SkillDetailsTag>
+      <AddSkillTag>
         <h1>Nueva Habilidad</h1>
         <form onSubmit={this.handleFormSubmit}>
           <section className="top-section">
@@ -75,25 +75,26 @@ class AddSkill extends Component {
                 <label>Nombre:</label>
                 <input type="text" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
               </div>
-              <div className="input-container">
+              <div className="input-container textarea-container">
                 <label>Descripción:</label>
                 <textarea name="description" value={this.state.description} onChange={e => this.handleChange(e)} />
               </div>
             </div>
             <div className="right-section">
-              <div className="input-container">
+              <div className="input-container category">
                 <label>Categoría:</label>
                 <select name="category" value={this.state.category} onChange={e => this.handleChange(e)}>
-                  <option value="Música">Música</option>
-                  <option value="Deporte">Deporte</option>
-                  <option value="Educación">Educación</option>
-                  <option value="Cocina">Cocina</option>
-                  <option value="Idiomas">Idiomas</option>
-                  <option value="Otros">Otros</option>
+                  <option value="musica">Música</option>
+                  <option value="deporte">Deporte</option>
+                  <option value="educacion">Educación</option>
+                  <option value="cocina">Cocina</option>
+                  <option value="idiomas">Idiomas</option>
+                  <option value="otros">Otros</option>
                 </select>
               </div>
-              <div style={divStyle}>
-                <LocationSearchInput onAddressChange={this.handleAddressChange}></LocationSearchInput>
+              <div className="dropdown-container">
+              <label>Dirección:</label>
+                <LocationSearchInput className="selection-box" onAddressChange={this.handleAddressChange}></LocationSearchInput>
               </div>
             </div>
 
@@ -101,12 +102,16 @@ class AddSkill extends Component {
           <section className="bottom-section">
           <div>
             <label>Imagen:</label>
+            <div className="image-container">
+            <img src={this.state.skillPicture} alt="" />
+            </div>
+            
             <input type="file" onChange={e => this.handleFileUpload(e)} />
           </div>
-          <input type="submit" value="Añadir Habilidad" />
+          <input className="btn login" type="submit" value="Añadir Habilidad" />
           </section>
         </form>
-      </SkillDetailsTag>
+      </AddSkillTag>
 
 
 

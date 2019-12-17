@@ -23,14 +23,14 @@ export default class Dashboard extends Component {
                 </section>
                 <section className="suggested-skills">
                     <h2>Nuestras Categorías</h2>
-                    <p>Aquí va el Carrousel de Categorías</p>
+                    <p>Aquí va el Carrousel de Categorías</p> 
                     <ul className="category-links">
-                        <li><Link to='/skills/category/music'><img src="../../../images/music.png"/><p>Música</p></Link></li>
-                        <li><Link to='/skills/category/sports'><img src="../../../images/raquet.png"/><p>Deporte</p></Link></li>
-                        <li><Link to='/skills/category/education'><img src="../../../images/open-book.png"/><p>Educación</p></Link></li>
-                        <li><Link to='/skills/category/cuisine'><img src="../../../images/eat.png"/><p>Cocina</p></Link></li>
-                        <li><Link to='/skills/category/languages'><img src="../../../images/receptionist.png"/><p>Idiomas</p></Link></li>
-                        <li><Link to='/skills/category/other'><img src="../../../images/ball.png"/><p>Otros</p></Link></li>
+                        <li><Link to='/skills/category/musica'><img src="../../../images/music.png"/><p>Música</p></Link></li>
+                        <li><Link to='/skills/category/deporte'><img src="../../../images/raquet.png"/><p>Deporte</p></Link></li>
+                        <li><Link to='/skills/category/educacion'><img src="../../../images/open-book.png"/><p>Educación</p></Link></li>
+                        <li><Link to='/skills/category/cocina'><img src="../../../images/eat.png"/><p>Cocina</p></Link></li>
+                        <li><Link to='/skills/category/idiomas'><img src="../../../images/receptionist.png"/><p>Idiomas</p></Link></li>
+                        <li><Link to='/skills/category/otros'><img src="../../../images/ball.png"/><p>Otros</p></Link></li>
                     </ul>
                     <h2>Destacados</h2>
                     <RandomSkillsList/>

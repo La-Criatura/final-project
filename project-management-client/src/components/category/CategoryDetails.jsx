@@ -36,7 +36,7 @@ export default class CategoryDetails extends Component {
                             <li key={skill._id}>
                                 <Link to={`/skills/${skill._id}`}>
                                     <SkillCard theSkill={skill} />
-                                </Link>
+                                </Link> 
                             </li>
                         )
                     })

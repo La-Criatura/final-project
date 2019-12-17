@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const EditUserTag = styled.div` 
 
 padding: 2rem;
-background-color: lightblue;
+
 display:flex;
 justify-content: center
 
@@ -15,7 +15,6 @@ justify-content: center
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 .top-section {
