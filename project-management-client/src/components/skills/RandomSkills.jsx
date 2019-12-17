@@ -16,7 +16,7 @@ class RandomSkillsList extends Component {
   }
 
   getAllSkills = () => {
-    axios.get(`http://localhost:5000/api/skills`, { withCredentials: true })
+    axios.get(`http://${process.env.REACT_APP_URL}/skills`, { withCredentials: true })
       .then(responseFromApi => {
         this.setState({
           listOfSkills: responseFromApi.data

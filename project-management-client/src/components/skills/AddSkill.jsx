@@ -30,7 +30,7 @@ class AddSkill extends Component {
     }
 
     // const {title, description, category} = this.state
-    axios.post("http://localhost:5000/api/skills", { title, description, address, category, skillPicture, location }, { withCredentials: true })
+    axios.post(`http://${process.env.REACT_APP_URL}/skills`, { title, description, address, category, skillPicture, location }, { withCredentials: true })
       .then(() => {
         this.setState({ title: "", description: "", address: "", category: "", skillPicture: "", lat: null, lng: null });
         this.props.history.push('/dashboard');

@@ -14,7 +14,7 @@ class SkillDetails extends Component {
   getSingleSkill = () => {
     const { params } = this.props.match;
     axios
-      .get(`http://localhost:5000/api/skills/${params.id}`, {
+      .get(`http://${process.env.REACT_APP_URL}/skills/${params.id}`, {
         withCredentials: true
       })
       .then(responseFromApi => {
@@ -55,7 +55,7 @@ class SkillDetails extends Component {
       credit += 1
     }
   
-    axios.put(`http://localhost:5000/api/${this.state.owner._id}`, {credit, counter}, {withCredentials: true})
+    axios.put(`http://${process.env.REACT_APP_URL}/${this.state.owner._id}`, {credit, counter}, {withCredentials: true})
     .then(() => {
       if(this.state.user.credit <= 0) {
         alert("No tienes suficientes créditos para realizar esta actividad")
@@ -63,7 +63,7 @@ class SkillDetails extends Component {
       } else {
         let userCredit = this.state.user.credit
         userCredit -=1
-        axios.put(`http://localhost:5000/api/${this.state.user._id}`, {credit: userCredit}, {withCredentials: true})
+        axios.put(`http://${process.env.REACT_APP_URL}/${this.state.user._id}`, {credit: userCredit}, {withCredentials: true})
         .then(() => {
           this.setState({user: {...this.state.user, credit: userCredit}})
           this.props.getUser(this.state.user)
@@ -77,7 +77,7 @@ class SkillDetails extends Component {
   deleteSkill = () => {
     const { params } = this.props.match;
     axios
-      .delete(`http://localhost:5000/api/skills/${params.id}`, {
+      .delete(`http://${process.env.REACT_APP_URL}/skills/${params.id}`, {
         withCredentials: true
       })
       .then(() => {
