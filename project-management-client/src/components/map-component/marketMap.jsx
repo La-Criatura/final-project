@@ -10,7 +10,7 @@ import PlacesAutocomplete, {
 import { className } from "./helperMap";
 import "./searchStyle.css"
 
-Geocode.setApiKey("AIzaSyDIDbsMyAFksYgDhGSvow9PBg39Kd4ww0s");
+Geocode.setApiKey("AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo");
 
 Geocode.setLanguage("es");
 

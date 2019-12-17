@@ -27,10 +27,6 @@ let server = http.createServer(app);
 
 const io = require('socket.io').listen(server)
 
-io.of('/chat').clients((error, clients) => {
-  if (error) throw error;
-  console.log(clients);
-}) 
 
 io.on('connection', function(socket){
   console.log('a user connected');
@@ -40,6 +36,16 @@ io.on('connection', function(socket){
     console.log(rooms); // [ <socket.id>, 'room 237' ]
     io.to('room 237').emit('a new user has joined the room'); // broadcast to everyone in the room
   });
+
+ 
+  io.of('/').in('room 237').clients((error, clients) => {
+    if (error) throw error;
+    let connectedUsers = clients
+    console.log(connectedUsers)
+    socket.to(connectedUsers[1]).emit('my message', 'hello')
+    
+  });
+
 
   socket.on("newUser", user => {
     console.log(`${user} connected`);

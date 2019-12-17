@@ -49,7 +49,7 @@ class Navbar extends Component {
       return (
         <NavBar>
           <section className="nav-left-side">
-            <Link to='/dashboard'>Logo</Link>
+            <Link to='/dashboard'>Boomerang</Link>
             <SearchBox />
             <Link to='/new/skill' className="btn login add" style={{ textDecoration: 'none' }}>Añadir Habilidad</Link>
             <Link to='/'><button className="btn signup" onClick={() => this.logoutUser()}>Logout</button></Link>
@@ -66,7 +66,7 @@ class Navbar extends Component {
       return (
         <NavBar>
           <section className="nav-left-side">
-            <Link to='/'>Logo</Link>
+            <Link to='/'>Boomerang</Link>
             <SearchBox />
           </section>
           <section className="nav-right-side">

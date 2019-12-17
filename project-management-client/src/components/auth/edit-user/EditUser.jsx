@@ -77,8 +77,16 @@ export default class EditUser extends Component {
                                 </div>
                                 <div className="input-container blue">
                                     <label>Ciudad:</label>
-                                    <input type="text" name="city" value={this.state.city} onChange={e => this.handleChange(e)} />
+                                    <select name="city" value={this.state.city} onChange={e => this.handleChange(e)}>
+                                        <option value="Barcelona">Barcelona</option>
+                                        <option value="Madrid">Madrid</option>
+                                        <option value="Sevilla">Sevilla</option>
+                                        <option value="Bilbao">Bilbao</option>
+                                        <option value="Valencia">Valencia</option>
+                                        <option value="Zaragoza">Zaragoza</option>
+                                    </select>
                                 </div>
+                               
                             </div>
                             <div>
                                 <div className="input-container">
