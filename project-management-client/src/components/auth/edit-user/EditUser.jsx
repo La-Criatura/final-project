@@ -18,21 +18,21 @@ export default class EditUser extends Component {
 
     getTheUser = () => {
         const params = this.state
-
-        axios.get(`http://localhost:5000/api/${params._id}`, { withCredentials: true })
-            .then(responseFromApi => {
-                const theUser = responseFromApi.data
-                this.setState(theUser)
-            })
-            .catch(err => {
-                console.log(err)
-            })
+       
+        axios.get(`${process.env.REACT_APP_URL}/${params._id}`, {withCredentials: true})
+        .then(responseFromApi => {
+            const theUser = responseFromApi.data
+            this.setState(theUser)
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 
     handleFormSubmit = (event) => {
         const { username, picture, email, city, counter } = this.state
         event.preventDefault()
-        axios.put(`http://localhost:5000/api/${this.props.loggedInUser._id}`, { username, picture, email, city, counter }, { withCredentials: true })
+        axios.put(`${process.env.REACT_APP_URL}/${this.props.loggedInUser._id}`, { username, picture, email, city, counter }, { withCredentials: true })
             .then(() => {
                 this.setState({ username: username, picture: picture, email: email, city: city, counter: counter });
             })
@@ -85,8 +85,8 @@ export default class EditUser extends Component {
                                         <option value="Valencia">Valencia</option>
                                         <option value="Zaragoza">Zaragoza</option>
                                     </select>
-                                    {/* <input type="text" name="city" value={this.state.city} onChange={e => this.handleChange(e)} /> */}
                                 </div>
+                               
                             </div>
                             <div>
                                 <div className="input-container">

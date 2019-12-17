@@ -13,18 +13,17 @@ class MapContainer extends Component {
 
     static defaultProps = {
         zoom: 15,
-    };
+    }
 
     render() {
         const lat = this.props.location.coordinates[0];
         const lng = this.props.location.coordinates[1];
         const center = { lat, lng }
         return (
-
-            <div style={{ height: '70vh', width: '100%' }}>
+            // Important! Always set the container height explicitly
+            <div style={{ height: '70vh', width: '100%'}}>
                 <GoogleMapReact
                     bootstrapURLKeys={`${process.env.REACT_APP_GOOGLE_KEY}`}
-
                     defaultCenter={center}
                     defaultZoom={this.props.zoom}
                 >

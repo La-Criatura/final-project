@@ -13,7 +13,7 @@ export default class chat extends Component {
             participants: []
         }
 
-        this.socket = io('http://localhost:5000');
+        this.socket = io(`${process.env.REACT_APP_CHAT_URL}`);
 
         this.socket.on('newMessage', message => {
             // let part = this.state.participants

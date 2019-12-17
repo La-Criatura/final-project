@@ -14,7 +14,7 @@ class SkillFilteredList extends Component {
   }
 
   getAllSkills = () => {
-    axios.get(`http://localhost:5000/api/skills`, { withCredentials: true })
+    axios.get(`${process.env.REACT_APP_URL}/skills`, { withCredentials: true })
       .then(responseFromApi => {
         this.setState({
           listOfSkills: responseFromApi.data

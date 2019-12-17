@@ -8,7 +8,7 @@ import PlacesAutocomplete, {
 } from 'react-places-autocomplete';
 
 import { className } from "./helperMap";
-import "./searchStyle.css"
+// import "./searchStyle.css"
 
 Geocode.setApiKey("AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo");
 
@@ -53,20 +53,20 @@ class LocationSearchInput extends React.Component {
 
     render() {
         return (
-            <PlacesAutocomplete
+            <PlacesAutocomplete 
                 value={this.state.address}
                 onChange={this.handleChange}
                 onSelect={this.handleSelect}
             >
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                    <div>
+                    <div className="search-box-container">
                         <input
                             {...getInputProps({
                                 placeholder: 'Search Places ...',
                                 className: 'location-search-input',
                             })}
                         />
-                        <div className="autocomplete-dropdown-container">
+                        <div>
                             {loading && <div>Loading...</div>}
                             {suggestions.map(suggestion => {
                                 const className = suggestion.active

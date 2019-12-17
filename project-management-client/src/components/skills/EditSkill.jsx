@@ -28,7 +28,7 @@ class EditSkill extends Component {
 
     event.preventDefault();
 
-    axios.put(`http://localhost:5000/api/skills/${this.props.theSkill._id}`, { title, description, skillPicture, category, address }, { withCredentials: true })
+    axios.put(`${process.env.REACT_APP_URL}/skills/${this.props.theSkill._id}`, { title, description, skillPicture, category }, { withCredentials: true })
       .then(() => {
         this.props.getTheSkill();
         // after submitting the form, redirect to '/Skills'
@@ -73,6 +73,7 @@ class EditSkill extends Component {
       <div>
         <hr />
         <h3>Editar Habilidad</h3>
+        
         <form onSubmit={this.handleFormSubmit}>
           <label>Nombre:</label>
           <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)} />
@@ -82,12 +83,12 @@ class EditSkill extends Component {
           <br />
           <label>Categoría:</label>
           <select name="category" value={this.state.category} onChange={e => this.handleChange(e)}>
-            <option value="Música">Música</option>
-            <option value="Deporte">Deporte</option>
-            <option value="Educación">Educación</option>
-            <option value="Cocina">Cocina</option>
-            <option value="Idiomas">Idiomas</option>
-            <option value="Otros">Otros</option>
+          <option value="musica">Música</option>
+                <option value="deporte">Deporte</option>
+                <option value="educacion">Educación</option>
+                <option value="cocina">Cocina</option>
+                <option value="idiomas">Idiomas</option>
+                <option value="otros">Otros</option>
           </select>
           <br />
           {/* onAddressChange={this.handleAddressChange}  */}
@@ -95,6 +96,7 @@ class EditSkill extends Component {
           {/* <label>Location:</label>
           <textarea name="location" value={this.state.location} onChange={e => this.handleChange(e)} />
           <br /> */}
+           
           <label>Foto:</label>
           <br />
           <img src={this.state.skillPicture} alt="" />
@@ -102,7 +104,9 @@ class EditSkill extends Component {
           <br />
           <input type="submit" value="Actualizar" />
         </form>
+       
       </div>
+     
     )
   }
 }

@@ -37,28 +37,14 @@ class Signup extends Component {
     this.setState({ [name]: value });
   }
 
-  // handleUpload = (e) => {
-  //   const uploadData = new FormData();
-  //   uploadData.append('picture', e.target.files[0])
-  //   this.service.upload(uploadData)
-  //   .then(
-  //     (data) => {
-  //       this.setState({...this.state, picture: data.secure_url})
-  //     },
-  //     (error) => {
-  //       console.error(error)
-  //     }
-  //   )
-  // }
-
   render() {
     return (
       <SignupTag>
         <div className="container">
           <header>
-            <Link to={"/"}> Home</Link>
+            <Link to={"/"}>Boomerang</Link>
             <div>
-              <h1>Regístrate en La Criatura</h1>
+              <h1>Regístrate en Boomerang</h1>
               <p>Escribe tus datos</p>
             </div>
             <Link to={"/"}> X</Link>

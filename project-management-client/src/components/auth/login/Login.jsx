@@ -32,7 +32,7 @@ class Login extends Component {
       <LoginTag>
         <div className="container">
           <header>
-            <Link to={"/"}> Home</Link>
+            <Link to={"/"}>Boomerang</Link>
             <div>
               <h1>Bienvenido de nuevo</h1>
               <p>Escribe tus datos de inicio de sesión</p>
