@@ -25,7 +25,7 @@ class EditSkill extends Component {
 
     event.preventDefault();
 
-    axios.put(`http://${process.env.REACT_APP_URL}/skills/${this.props.theSkill._id}`, { title, description, skillPicture, category }, { withCredentials: true })
+    axios.put(`${process.env.REACT_APP_URL}/skills/${this.props.theSkill._id}`, { title, description, skillPicture, category }, { withCredentials: true })
       .then(() => {
         this.props.getTheSkill();
         // after submitting the form, redirect to '/Skills'

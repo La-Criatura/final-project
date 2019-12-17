@@ -19,7 +19,7 @@ export default class EditUser extends Component {
       getTheUser = () => {
         const params = this.state
        
-        axios.get(`http://${process.env.REACT_APP_URL}/${params._id}`, {withCredentials: true})
+        axios.get(`${process.env.REACT_APP_URL}/${params._id}`, {withCredentials: true})
         .then(responseFromApi => {
             const theUser = responseFromApi.data
             this.setState(theUser)
@@ -32,7 +32,7 @@ export default class EditUser extends Component {
     handleFormSubmit = (event) => {
         const { username, picture, email, city, counter } = this.state
         event.preventDefault()
-        axios.put(`http://${process.env.REACT_APP_URL}/${this.props.loggedInUser._id}`, { username, picture, email, city, counter }, { withCredentials: true })
+        axios.put(`${process.env.REACT_APP_URL}/${this.props.loggedInUser._id}`, { username, picture, email, city, counter }, { withCredentials: true })
             .then(() => {
                 this.setState({ username: username, picture: picture, email: email, city: city, counter: counter });
             })
