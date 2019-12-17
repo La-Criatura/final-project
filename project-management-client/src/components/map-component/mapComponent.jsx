@@ -12,10 +12,6 @@ class MapContainer extends Component {
     }
 
     static defaultProps = {
-        // center: {
-        //     lat: 40.24,
-        //     lng: -3.70
-        // },
         zoom: 15,
     };
 
@@ -24,7 +20,7 @@ class MapContainer extends Component {
         const lng = this.props.location.coordinates[1];
         const center = { lat, lng }
         return (
-            // Important! Always set the container height explicitly
+
             <div style={{ height: '70vh', width: '100%' }}>
                 <GoogleMapReact
                     bootstrapURLKeys={`${process.env.REACT_APP_GOOGLE_KEY}`}

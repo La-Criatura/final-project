@@ -14,7 +14,6 @@ class AddSkill extends Component {
   }
 
   handleFormSubmit = (event) => {
-    console.log(this.state.address, this.state.lat, this.state.lng)
     event.preventDefault();
     const title = this.state.title;
     const description = this.state.description;

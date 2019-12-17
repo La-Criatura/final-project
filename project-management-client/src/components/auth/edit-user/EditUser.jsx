@@ -15,18 +15,18 @@ export default class EditUser extends Component {
     // componentDidMount() {
     //     this.props.getTheUser()
     //   }
-    
-      getTheUser = () => {
+
+    getTheUser = () => {
         const params = this.state
-       
-        axios.get(`http://localhost:5000/api/${params._id}`, {withCredentials: true})
-        .then(responseFromApi => {
-            const theUser = responseFromApi.data
-            this.setState(theUser)
-        })
-        .catch(err => {
-            console.log(err)
-        })
+
+        axios.get(`http://localhost:5000/api/${params._id}`, { withCredentials: true })
+            .then(responseFromApi => {
+                const theUser = responseFromApi.data
+                this.setState(theUser)
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     handleFormSubmit = (event) => {
@@ -77,7 +77,15 @@ export default class EditUser extends Component {
                                 </div>
                                 <div className="input-container blue">
                                     <label>Ciudad:</label>
-                                    <input type="text" name="city" value={this.state.city} onChange={e => this.handleChange(e)} />
+                                    <select name="city" value={this.state.city} onChange={e => this.handleChange(e)}>
+                                        <option value="Barcelona">Barcelona</option>
+                                        <option value="Madrid">Madrid</option>
+                                        <option value="Sevilla">Sevilla</option>
+                                        <option value="Bilbao">Bilbao</option>
+                                        <option value="Valencia">Valencia</option>
+                                        <option value="Zaragoza">Zaragoza</option>
+                                    </select>
+                                    {/* <input type="text" name="city" value={this.state.city} onChange={e => this.handleChange(e)} /> */}
                                 </div>
                             </div>
                             <div>
@@ -94,7 +102,7 @@ export default class EditUser extends Component {
                         <section className="bottom-section">
                             <img src={this.state.picture} width="200" alt="" />
                             <input className="choose-file" type="file" onChange={e => this.handleFileUpload(e)} />
-                        
+
                         </section>
                         <input className="btn dark-blue" type="submit" value="Actualizar Perfil" />
                     </form>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import AuthService from '../auth/auth-service'
+import LocationSearchInput from '../map-component/marketMap';
 
 class EditSkill extends Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class EditSkill extends Component {
       description: this.props.theSkill.description,
       category: this.props.theSkill.category,
       skillPicture: this.props.theSkill.skillPicture,
-      //location: this.props.theSkill.location
+      address: this.props.theSkill.address
+
     }
   }
 
@@ -21,11 +23,12 @@ class EditSkill extends Component {
     const description = this.state.description;
     const skillPicture = this.state.skillPicture;
     const category = this.state.category;
+    const address = this.state.address;
 
 
     event.preventDefault();
 
-    axios.put(`http://localhost:5000/api/skills/${this.props.theSkill._id}`, { title, description, skillPicture, category }, { withCredentials: true })
+    axios.put(`http://localhost:5000/api/skills/${this.props.theSkill._id}`, { title, description, skillPicture, category, address }, { withCredentials: true })
       .then(() => {
         this.props.getTheSkill();
         // after submitting the form, redirect to '/Skills'
@@ -87,6 +90,8 @@ class EditSkill extends Component {
             <option value="Otros">Otros</option>
           </select>
           <br />
+          {/* onAddressChange={this.handleAddressChange}  */}
+          {/* <LocationSearchInput value={this.state.address}></LocationSearchInput> */}
           {/* <label>Location:</label>
           <textarea name="location" value={this.state.location} onChange={e => this.handleChange(e)} />
           <br /> */}

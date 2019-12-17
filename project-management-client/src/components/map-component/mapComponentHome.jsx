@@ -13,18 +13,13 @@ class MapContainerHome extends Component {
 
     static defaultProps = {
         center: {
-            lat: 40.24,
-            lng: -3.70
+            lat: 40.4183,
+            lng: -3.70275
         },
-        zoom: 15,
+        zoom: 12,
     };
 
-
-
     render() {
-
-        console.log(this.props)
-
         return (
             // Important! Always set the container height explicitly
             <div style={{ height: '70vh', width: '100%' }}>
