@@ -147,7 +147,7 @@ class SkillDetails extends Component {
           </div>
           <div>
             <label>Valorar:</label>
-            
+            <input type="text" name="email"/>
           </div>
         </SkillDetailsTag>
       );
