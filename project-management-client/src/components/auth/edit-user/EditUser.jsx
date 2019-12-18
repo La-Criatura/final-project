@@ -13,21 +13,17 @@ export default class EditUser extends Component {
         };
     }
 
-    // componentDidMount() {
-    //     this.props.getTheUser()
-    //   }
-
     getTheUser = () => {
         const params = this.state
-       
-        axios.get(`${process.env.REACT_APP_URL}/${params._id}`, {withCredentials: true})
-        .then(responseFromApi => {
-            const theUser = responseFromApi.data
-            this.setState(theUser)
-        })
-        .catch(err => {
-            console.log(err)
-        })
+
+        axios.get(`${process.env.REACT_APP_URL}/${params._id}`, { withCredentials: true })
+            .then(responseFromApi => {
+                const theUser = responseFromApi.data
+                this.setState(theUser)
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     handleFormSubmit = (event) => {
@@ -87,7 +83,7 @@ export default class EditUser extends Component {
                                         <option value="Zaragoza">Zaragoza</option>
                                     </select>
                                 </div>
-                               
+
                             </div>
                             <div>
                                 <div className="input-container">
@@ -108,7 +104,7 @@ export default class EditUser extends Component {
                         <input className="btn dark-blue" type="submit" value="Actualizar Perfil" />
                     </form>
                 </div>
-                <hr/>
+                <hr />
                 <FavoriteSkills theUser={this.state}></FavoriteSkills>
             </EditUserTag>
         )
