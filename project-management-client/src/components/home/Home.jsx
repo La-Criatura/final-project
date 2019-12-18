@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import HomeTag from './HomeStyles'
 import axios from 'axios';
 
+
 // import PlacesAutocomplete from 'react-places-autocomplete'
 
 import { Link } from 'react-router-dom';
 import RandomSkillsListHome from '../skills/RandomSkillsHome';
 import MapContainerHome from '../map-component/mapComponentHome';
+import { Jumbotron, Container } from 'react-bootstrap'
 
 
 export default class Home extends Component {
@@ -31,13 +33,15 @@ export default class Home extends Component {
     render() {
         return (
 
-            < HomeTag >
+            < Container className="w-100">
 
-                <section>
-
-                    <img src="" alt="" />
-                    <h1>Claim</h1>
-                </section>
+                <Container className="my-3" >
+                    <Jumbotron className="d-flex flex-column align-items-center justify-content-center mb-0">
+                        <img src="" alt="" />
+                        <h1 className="display-4">Claim</h1>
+                        <p className="lead">Estamos esparando el copy de Sonia</p>
+                    </Jumbotron>
+                </Container>
                 <section>
 
                     <h2>Nuestras Categorías</h2>
@@ -61,7 +65,7 @@ export default class Home extends Component {
                     <h2>Cerca de ti</h2>
                     <MapContainerHome listOfSkills={this.state.listOfSkills}></MapContainerHome>
                 </section>
-            </HomeTag >
+            </Container >
         )
     }
 }
