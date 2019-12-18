@@ -42,12 +42,12 @@ export default class Home extends Component {
 
                     <h2>Nuestras Categorías</h2>
                     <ul className="category-links">
-                        <li className="music"><Link to='/skills/category/music'><img src="../../../images/music.png" /><p>Música</p></Link></li>
-                        <li className="sports"><Link to='/skills/category/sports'><img src="../../../images/raquet.png" /><p>Deporte</p></Link></li>
-                        <li className="education"><Link to='/skills/category/education'><img src="../../../images/open-book.png" /><p>Educación</p></Link></li>
-                        <li className="cuisine"><Link to='/skills/category/cuisine'><img src="../../../images/eat.png" /><p>Cocina</p></Link></li>
-                        <li className="languages"><Link to='/skills/category/languages'><img src="../../../images/receptionist.png" /><p>Idiomas</p></Link></li>
-                        <li className="other"><Link to='/skills/category/other'><img src="../../../images/ball.png" /><p>Otros</p></Link></li>
+                        <li className="music"><Link to='/skills/category/musica'><img src="../../../images/music.png" /><p>Música</p></Link></li>
+                        <li className="sports"><Link to='/skills/category/deporte'><img src="../../../images/raquet.png" /><p>Deporte</p></Link></li>
+                        <li className="education"><Link to='/skills/category/educacion'><img src="../../../images/open-book.png" /><p>Educación</p></Link></li>
+                        <li className="cuisine"><Link to='/skills/category/cocina'><img src="../../../images/eat.png" /><p>Cocina</p></Link></li>
+                        <li className="languages"><Link to='/skills/category/idiomas'><img src="../../../images/receptionist.png" /><p>Idiomas</p></Link></li>
+                        <li className="other"><Link to='/skills/category/otros'><img src="../../../images/ball.png" /><p>Otros</p></Link></li>
                     </ul>
                 </section>
                 <section className="featured-skills">

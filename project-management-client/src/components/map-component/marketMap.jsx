@@ -20,11 +20,7 @@ class LocationSearchInput extends React.Component {
         this.state = { address: '', lat: null, lng: null };
     }
 
-    // handleChange = address => {
-    //     this.setState({ address });
-    // };
-
-    handleChange = address => {
+    handleHola = address => {
         this.setState({ address });
         this.props.onAddressChange({ address });
     };
@@ -55,7 +51,7 @@ class LocationSearchInput extends React.Component {
         return (
             <PlacesAutocomplete 
                 value={this.state.address}
-                onChange={this.handleChange}
+                onChange={this.handleHola}
                 onSelect={this.handleSelect}
             >
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (

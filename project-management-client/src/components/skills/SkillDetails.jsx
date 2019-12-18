@@ -77,6 +77,24 @@ class SkillDetails extends Component {
       })
   }
 
+  addToFavourites = (e) => {
+    e.preventDefault()
+    const favouriteSkill = this.state._id
+    let favouritesArray = this.state.user.favourites
+    favouritesArray= favouritesArray.push(favouriteSkill)
+    const favourites = favouritesArray
+    
+    axios.put(`${process.env.REACT_APP_URL}/${this.state.user._id}`, { $push: {favourites: favouriteSkill} }, { withCredentials: true })
+    .then(() => {
+        this.setState({user:{favourites: favouritesArray}});
+    })
+    .then(() => {
+        
+        this.props.history.push('/dashboard')
+    })
+
+  }
+
   // DELETE Skill:
   deleteSkill = () => {
     const { params } = this.props.match;
@@ -110,6 +128,9 @@ class SkillDetails extends Component {
               <div className="data-container">
                 <label>Autor:</label><p>{this.state.owner.username}</p>
               </div>
+              <div className="data-container">
+                <label>Valoración:</label><p>{this.state.averageRating}</p>
+              </div>
             </div>
 
 
@@ -122,13 +143,12 @@ class SkillDetails extends Component {
             <Link to={{ pathname: "/chat", aboutProps: { owner: this.state.owner } }}>Chat</Link>
             <button onClick={() => this.updateCredits()}>Pacto</button>
             <Link to={"/skills"}>Back to skills</Link>
+            <button onClick={(e) => this.addToFavourites(e)}>Añadir a Favoritos</button>
           </div>
-
-
-
-
-
-
+          <div>
+            <label>Valorar:</label>
+            
+          </div>
         </SkillDetailsTag>
       );
     }

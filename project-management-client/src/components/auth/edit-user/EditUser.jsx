@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import AuthService from '../auth-service';
 import EditUserTag from './EditUserStyles';
+import FavoriteSkills from '../../skills/favorite-skills/FavoriteSkills';
 
 export default class EditUser extends Component {
     constructor(props) {
@@ -94,7 +95,7 @@ export default class EditUser extends Component {
                                     <input type="text" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
                                 </div>
                                 <div className="input-container blue">
-                                    <label>Créditos La Criatura:</label>
+                                    <label>Créditos:</label>
                                     <input type="text" name="email" value={this.state.credit} />
                                 </div>
                             </div>
@@ -107,6 +108,8 @@ export default class EditUser extends Component {
                         <input className="btn dark-blue" type="submit" value="Actualizar Perfil" />
                     </form>
                 </div>
+                <hr/>
+                <FavoriteSkills theUser={this.state}></FavoriteSkills>
             </EditUserTag>
         )
     }

@@ -23,6 +23,7 @@ class AddSkill extends Component {
     const latitude = this.state.lat
     const longitude = this.state.lng
 
+    
     const location = {
       type: "Point",
       coordinates: [latitude, longitude]

@@ -12,9 +12,15 @@ class EditSkill extends Component {
       description: this.props.theSkill.description,
       category: this.props.theSkill.category,
       skillPicture: this.props.theSkill.skillPicture,
-      address: this.props.theSkill.address
-
+      address: this.props.theSkill.address,
+      lat: this.props.theSkill.location.coordinates[0],
+      lng: this.props.theSkill.location.coordinates[1]
     }
+  }
+
+  handleAddressChange = ({ address, lat, lng }) => {
+    this.setState({ address })
+    if (lat && lng) this.setState({ lat, lng })
   }
 
   handleFormSubmit = (event) => {
@@ -24,11 +30,18 @@ class EditSkill extends Component {
     const skillPicture = this.state.skillPicture;
     const category = this.state.category;
     const address = this.state.address;
+    const latitude = this.state.lat
+    const longitude = this.state.lng
+
+    const location = {
+      type: "Point",
+      coordinates: [latitude, longitude]
+    }
 
 
     event.preventDefault();
 
-    axios.put(`${process.env.REACT_APP_URL}/skills/${this.props.theSkill._id}`, { title, description, skillPicture, category }, { withCredentials: true })
+    axios.put(`${process.env.REACT_APP_URL}/skills/${this.props.theSkill._id}`, { title, description, skillPicture, category, address, location }, { withCredentials: true })
       .then(() => {
         this.props.getTheSkill();
         // after submitting the form, redirect to '/Skills'
@@ -73,7 +86,7 @@ class EditSkill extends Component {
       <div>
         <hr />
         <h3>Editar Habilidad</h3>
-        
+
         <form onSubmit={this.handleFormSubmit}>
           <label>Nombre:</label>
           <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)} />
@@ -83,20 +96,20 @@ class EditSkill extends Component {
           <br />
           <label>Categoría:</label>
           <select name="category" value={this.state.category} onChange={e => this.handleChange(e)}>
-          <option value="musica">Música</option>
-                <option value="deporte">Deporte</option>
-                <option value="educacion">Educación</option>
-                <option value="cocina">Cocina</option>
-                <option value="idiomas">Idiomas</option>
-                <option value="otros">Otros</option>
+            <option value="musica">Música</option>
+            <option value="deporte">Deporte</option>
+            <option value="educacion">Educación</option>
+            <option value="cocina">Cocina</option>
+            <option value="idiomas">Idiomas</option>
+            <option value="otros">Otros</option>
           </select>
           <br />
-          {/* onAddressChange={this.handleAddressChange}  */}
-          {/* <LocationSearchInput value={this.state.address}></LocationSearchInput> */}
-          {/* <label>Location:</label>
-          <textarea name="location" value={this.state.location} onChange={e => this.handleChange(e)} />
-          <br /> */}
-           
+        
+          <div className="dropdown-container">
+            <label>Dirección:</label>
+            <LocationSearchInput className="selection-box" onAddressChange={this.handleAddressChange}></LocationSearchInput>
+          </div>
+
           <label>Foto:</label>
           <br />
           <img src={this.state.skillPicture} alt="" />
@@ -104,9 +117,9 @@ class EditSkill extends Component {
           <br />
           <input type="submit" value="Actualizar" />
         </form>
-       
+
       </div>
-     
+
     )
   }
 }
