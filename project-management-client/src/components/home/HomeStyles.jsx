@@ -121,6 +121,12 @@ width: 100vw
 
     }
 
+    #id {
+        height: '70vh'; 
+        width: '100%'; 
+        border:'2px solid black';
+    }
+
     
 
     

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const SkillCardTag = styled.div`
 width: 22rem;
-height: 25rem;
+height: 20rem;
 border: 3px solid black;
 border-radius: .5rem;
 margin: 1rem;
@@ -57,6 +57,9 @@ div.card-data {
 
 p {
     text-align: left;
+    white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
 }
 
 .drop-down-menu{

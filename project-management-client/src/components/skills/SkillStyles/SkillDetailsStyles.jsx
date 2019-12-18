@@ -59,6 +59,13 @@ const SkillDetailsTag = styled.div`
             }
             
         }
+
+        #map {
+            height: 400px;
+            box-sizing: border-box
+            border-radius: 2rem;
+            border: 2px grey solid;
+        }
     }
 
 

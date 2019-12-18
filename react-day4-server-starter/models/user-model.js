@@ -9,7 +9,8 @@ const userSchema = new Schema({
   email: { type: String, default: 'email@email.com' },
   credit: { type: Number, default: 3 },
   city: { type: String, default: 'City' },
-  counter: { type: Number, default: 0 }
+  counter: { type: Number, default: 0 },
+  favourites: [{ type: Schema.Types.ObjectId, ref: "Skill" }]
 },
   {
     timestamps: true

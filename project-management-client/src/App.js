@@ -66,7 +66,7 @@ class App extends React.Component {
             <ProtectedRoute user={this.state.loggedInUser} getUser={this.getTheUser} path='/:id' component={EditUser} />
             
           </Switch>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       );
     } else {
@@ -81,7 +81,7 @@ class App extends React.Component {
             <Route exact path='/skills/category/:name' component={CategoryDetails} />
             <Route exact path='/skills/:id' render={() => <h1>Tienes que registrate para entrar aquí</h1>} />
           </Switch>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       );
     }
