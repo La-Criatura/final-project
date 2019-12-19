@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const EditUserTag = styled.div` 
 
-padding: 2rem;
+${'' /* padding: 2rem;
 
 display:flex;
 justify-content: center
@@ -109,7 +109,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */}
 
 `;
 

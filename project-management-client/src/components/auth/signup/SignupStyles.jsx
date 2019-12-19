@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const SignupTag = styled.div`
 
-display: flex;
+${'' /* display: flex;
 justify-content: center;
 align-items: center
 width: 100vw;
@@ -84,7 +84,7 @@ section {
         align-items: center;
         margin-bottom: 1rem;
     }
-}
+} */}
 
 `;
 

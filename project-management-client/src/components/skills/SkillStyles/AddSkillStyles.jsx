@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const AddSkillTag = styled.div`
-    display: flex;
+    ${'' /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center
@@ -178,7 +178,7 @@ const AddSkillTag = styled.div`
             padding-left: 1rem;
 
         }
-    }
+    } */}
 `;
 
 export default AddSkillTag
