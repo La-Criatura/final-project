@@ -49,11 +49,11 @@ class RandomSkillsListHome extends Component {
     let randomArray = this.randomPositions(this.state.listOfSkills.length)
     return (
       <div className="skill-cards">
-        <ul>
+        <ul className="d-flex flex-wrap justify-content-center">
           {this.state.listOfSkills.filter((elm,idx) => randomArray.includes(idx)).map(skill => {
             return (
-              <li key={skill._id}>
-                <Link to={`/skills/${skill._id}`}>
+              <li className="hover-effect" key={skill._id}>
+                <Link className="no-decoration" to={`/skills/${skill._id}`}>
                 <SkillCard theSkill={skill} /> 
                 </Link>
               </li>

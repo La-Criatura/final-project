@@ -83,8 +83,8 @@ class Navbar extends Component {
           {/* <section className="nav-right-side"> */}
 
           <Col md="4" className="d-flex justify-content-end">
-            <Link className="mr-3" to='/login'><Button variant="info">Inicia Sesión</Button></Link>
-            <Link className="" to='/signup'><Button variant="info">Regístrate</Button></Link>
+            <Link className="mr-3 has-shadow" to='/login'><Button variant="info">Inicia Sesión</Button></Link>
+            <Link className="has-shadow" to='/signup'><Button variant="info">Regístrate</Button></Link>
           </Col>
 
 

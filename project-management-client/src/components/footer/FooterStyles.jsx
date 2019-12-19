@@ -8,6 +8,7 @@ width: 100vw
 display: flex;
 justify-content: center
 padding: 2rem 0;
+margin-top: 3rem;
 div {
     width: 80vw;
     display: flex;

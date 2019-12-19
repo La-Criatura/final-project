@@ -36,7 +36,7 @@ export default class Home extends Component {
             < Container className="w-100">
 
                 <Container className="my-3" >
-                    <Jumbotron className="d-flex flex-column align-items-center justify-content-center mb-0">
+                    <Jumbotron className="d-flex flex-column align-items-center justify-content-center mb-0 rounded-corners has-shadow">
                         <img src="" alt="" />
                         <h1 className="display-4">Claim</h1>
                         <p className="lead">Estamos esperando el copy de Sonia</p>
@@ -62,17 +62,16 @@ export default class Home extends Component {
 
 
 
-                <section className="featured-skills">
+                <Container className="featured-skills d-flex flex-column align-items-center w-100 p-3 mb-4 bg-warning has-shadow rounded-corners">
                     <h2>Destacados</h2>
+                    <RandomSkillsListHome/>
+                </Container>
 
-                    <RandomSkillsListHome />
-
-
-                </section>
-                <section>
+                <Container className=" d-flex flex-column align-items-center w-100 p-3 m-0 bg-light has-shadow rounded-corners">
                     <h2>Cerca de ti</h2>
                     <MapContainerHome listOfSkills={this.state.listOfSkills}></MapContainerHome>
-                </section>
+                </Container>
+                
             </Container >
         )
     }

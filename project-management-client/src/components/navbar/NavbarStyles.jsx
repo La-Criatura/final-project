@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const NavBar = styled.div`
+    
+
     // z-index: 100;
     // position: fixed
     // top:0
