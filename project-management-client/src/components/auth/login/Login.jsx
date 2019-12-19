@@ -33,25 +33,25 @@ class Login extends Component {
     return (
       <Form>
         <header className="d-flex flex-column">
-          <div className="d-flex justify-content-between py-3 mb-3">
-            <Link to={"/"} className='text-body'>Boomerang</Link>
-            <Link to={"/"} className='text-body'> X</Link>
+          <div className="d-flex justify-content-between mb-1">
+            
           </div>
 
           <div className="mb-3 text-center">
             <h1>Bienvenido de nuevo</h1>
-            <p>Escribe tus datos de inicio de sesión</p>
+            <p>Introduce tus datos de inicio de sesión</p>
           </div>
         </header>
 
         <form onSubmit={this.handleFormSubmit} className="d-flex flex-column justify-content-center align-items-center">
+        <Form.Group controlId="formBasicInput"></Form.Group>
           <Form.Label>Nombre de Usuario </Form.Label>
-          <Form.Group controlId="formBasicInput"></Form.Group>
+          
             <input className="form-control form-control-lg" type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
           
 
           <Form.Group controlId="formBasicPassword"></Form.Group>
-          <Form.Label>Contraseña </Form.Label>
+          <Form.Label className="mx-0 my-0">Contraseña </Form.Label>
           <input className="form-control form-control-lg" type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
          <input className="btn btn-info mt-3 mb-3" type="submit" value="Inicia Sesión" />
 
@@ -59,7 +59,7 @@ class Login extends Component {
     
         <section className="bottom-section d-flex flex-column justify-content-center align-items-center">
           <p>¿No tienes cuenta?</p>
-          <Link to={"/signup"}><Button variant="outline-info mb-3">Regístrate</Button></Link>
+          <Link to={"/signup"}><Button variant="outline-info mb-2">Regístrate</Button></Link>
          
         </section>
       

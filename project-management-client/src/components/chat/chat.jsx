@@ -43,25 +43,26 @@ export default class chat extends Component {
     }
 
     render() {
+        console.log(this.props.loggedInUser.username)
         return (
-            <div id="cont">
-                {/* Box que contiene el chat */}
-                <div >
-                    <ChatTag  className="chatBox" id="chatBox">
+           
+                <div className="chat has-shadow">
+               
+                <h4>Chat</h4>
+                
+                    <ChatTag className="chatBox" id="chatBox">
                         {this.state.messages.map((elem, idx) => {
                             return (
-                                <h6 key={idx}>
-                                    {elem.user} : {elem.text}
-                                </h6>
+                                <h5 key={idx}>
+                                    <span>{elem.user} </span>: {elem.text}
+                                </h5>
                             );
                         })}
                     </ChatTag>
-                    {/* Input para nuevos mensajes */}
                     <div className="textForm">
                         <InputMess info={this.sendMessage}></InputMess>
                     </div>
                 </div>
-            </div>
         )
     }
 }

@@ -24,20 +24,14 @@ export default class SearchBoxResults extends Component {
             <div>
                 {this.props.location.aboutProps ?
                     <div>
-
                         {/* {this.props.location.aboutProps.theFilteredSkills.map((initialSkill, idx) => <div key={idx}> {initialSkill.title}</div>)} */}
                         {this.props.location.aboutProps.theFilteredSkills.map((initialSkill, idx) => <li key={idx}><Link to={`/skills/${initialSkill._id}`}><SkillCard theSkill={initialSkill} /></Link></li>)}
                     </div>
                     :
                     <div>
-
                     </div>
                 }
             </div>
-
-
-
-
         )
     }
 }

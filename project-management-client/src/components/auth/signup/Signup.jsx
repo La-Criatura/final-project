@@ -41,74 +41,47 @@ class Signup extends Component {
 
   render() {
     return (
-      // <SignupTag>
-      //   <div className="container">
-      //     <header>
-      //       <Link to={"/"}>Boomerang</Link>
-      //       <div>
-      //         <h1>Regístrate en Boomerang</h1>
-      //         <p>Escribe tus datos</p>
-      //       </div>
-      //       <Link to={"/"}> X</Link>
-      //     </header>
-      //     <section>
-      //       <form onSubmit={this.handleFormSubmit}>
-      //         <label>Username:</label>
-      //         <input type="text" name="username" autocomplete="off" value={this.state.username} onChange={e => this.handleChange(e)} />
-      //         <label>Password:</label>
-      //         <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
-      //         <input className="btn login" type="submit" value="Signup" />
-      //       </form>
-      //       <p>Already have account?</p>
-      //     <Link to={"/"}> Login</Link>
-      //     </section>
+      <Form>
 
-
-      //   </div>
-      // </SignupTag>
-
-       <Form>
-        
-          <header className="d-flex flex-column">
+        <header className="d-flex flex-column">
           <div className="d-flex justify-content-between py-3 mb-3">
-            <Link to={"/"} className='text-body'>Boomerang</Link>
-            <Link to={"/"} className='text-body'> X</Link>
-            </div>
-         
-            <div className="mb-3 text-center">
-              <h1>Regístrate en Boomerang</h1>
-              <p>Escribe tus datos</p>
-            </div>
-            </header>
-        
-        
-        
-            <form onSubmit={this.handleFormSubmit} className="d-flex flex-column justify-content-center align-items-center">
-            <Form.Label>Username</Form.Label>
-             <Form.Group controlId="formBasicInput"> </Form.Group>
-              <input className="form-control form-control-lg" type="text" name="username" autocomplete="off" value={this.state.username} onChange={e => this.handleChange(e)} />
-             
+            {/* <Link to={"/"} className='text-body'>Boomerang</Link>
+            <Link to={"/"} className='text-body'> X</Link> */}
+          </div>
+
+          <div className="mb-3 text-center">
+            <h1>Regístrate en Boomerang</h1>
+            <p>Introduce tus datos</p>
+          </div>
+        </header>
 
 
-              <Form.Group controlId="formBasicPassword"> </Form.Group>
-              <Form.Label>Password</Form.Label>
-              <input className="form-control form-control-lg" type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
-             
-              <input className="btn btn-info mt-3" type="submit" value="Signup" />
-           
-              </form>
-              <div className="bottom-section d-flex flex-column justify-content-center align-items-center">
-             
-             
-            <p>Already have account?</p>
-          <Link to={"/"}><Button variant="outline-info mb-3">Login</Button></Link>
-         
 
-</div>
-       
+        <form onSubmit={this.handleFormSubmit} className="d-flex flex-column justify-content-center align-items-center">
+        <Form.Group controlId="formBasicInput"> </Form.Group>
+          <Form.Label className="mx-0 my-0">Nombre de Usuario</Form.Label>
+          
+          <input className="form-control form-control-lg" type="text" name="username" autocomplete="off" value={this.state.username} onChange={e => this.handleChange(e)} />
+
+
+
+          <Form.Group controlId="formBasicPassword"> </Form.Group>
+          <Form.Label className="mx-0 my-0">Contraseña</Form.Label>
+          <input className="form-control form-control-lg" type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
+
+          <input className="btn btn-info mt-4" type="submit" value="Regístrate" />
+
+        </form>
+        <div className="bottom-section d-flex flex-column justify-content-center align-items-center">
+
+
+          <p className="text-center mt-2">¿Tienes cuenta ya?</p>
+          <Link to={"/login"}><Button variant="outline-info">Iniciar Sesión</Button></Link>
+
+
+        </div>
+
       </Form>
-
-
     )
   }
 }

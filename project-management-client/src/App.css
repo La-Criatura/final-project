@@ -1,45 +1,132 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center, 
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 
@@ -49,14 +136,14 @@ table {
     /* background-color: #E7F1FD; */
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     box-sizing: border-box;
 }
 
 .has-shadow {
-    -webkit-box-shadow: 0px 2px 18px -2px rgba(0,0,0,0.68);
--moz-box-shadow: 0px 2px 18px -2px rgba(0,0,0,0.68);
-box-shadow: 0px 2px 18px -2px rgba(0,0,0,0.68);
+    -webkit-box-shadow: 0px 2px 18px -2px rgba(0, 0, 0, 0.68);
+    -moz-box-shadow: 0px 2px 18px -2px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 2px 18px -2px rgba(0, 0, 0, 0.68);
 }
 
 .rounded-corners {
@@ -68,7 +155,7 @@ box-shadow: 0px 2px 18px -2px rgba(0,0,0,0.68);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-     
+
 }
 
 /* div.card:hover{
@@ -88,9 +175,80 @@ li.hover-effect {
 } */
 
 
-a:hover 
-{
-     color: black; 
-     text-decoration:none; 
-     cursor:pointer;  
+a:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.has-scroll-overflow {
+    overflow-y: scroll;
+    height: 33.5rem;
+}
+
+.chatBox {
+    background-color: white;
+    margin: 2rem;
+    width: 50vw;
+    padding: 1rem;
+    height: 50vh;
+    overflow-y: scroll;
+    border:1px solid grey;
+   
+}
+
+.chat {
+    margin-top:1rem;
+    border: solid 2px grey;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat h5{
+    color:grey;
+    font-size:15px;
+}
+
+.chat h5 span{
+    color:red;
+    font-size:15px;
+}
+
+.chat h4 {
+    margin-top: 0.5rem;
+    color: black;
+}
+
+.textForm {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.textForm input {
+    width: 50vw;
+    height: 4rem;
+    margin: 0;
+}
+
+.send {
+    text-align: center;
+}
+
+.chatButton {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn.btn-info {
+    width: 15vw;
 }

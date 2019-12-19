@@ -24,7 +24,7 @@ class AddSkill extends Component {
     const latitude = this.state.lat
     const longitude = this.state.lng
 
-    
+
     const location = {
       type: "Point",
       coordinates: [latitude, longitude]
@@ -64,15 +64,15 @@ class AddSkill extends Component {
   }
 
   render() {
-    
+
     return (
-      
+
       <Form>
         <h1>Nueva Habilidad</h1>
         <form onSubmit={this.handleFormSubmit}>
           <section className="top-section">
             <div className="left-section d-flex" >
-              <div  className="input-container">
+              <div className="input-container">
                 <label>Nombre:</label>
                 <input type="text" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
               </div>
@@ -85,6 +85,7 @@ class AddSkill extends Component {
               <div className="input-container category">
                 <label>Categoría:</label>
                 <select name="category" value={this.state.category} onChange={e => this.handleChange(e)}>
+                  
                   <option value="musica">Música</option>
                   <option value="deporte">Deporte</option>
                   <option value="educacion">Educación</option>
@@ -94,22 +95,22 @@ class AddSkill extends Component {
                 </select>
               </div>
               <div className="dropdown-container">
-              <label>Dirección:</label>
+                <label>Dirección:</label>
                 <LocationSearchInput className="selection-box" onAddressChange={this.handleAddressChange}></LocationSearchInput>
               </div>
             </div>
 
           </section>
           <section className="bottom-section">
-          <div>
-            <label>Imagen:</label>
-            <div className="image-container">
-            <img src={this.state.skillPicture} alt="" />
+            <div>
+              <label>Imagen:</label>
+              <div className="image-container">
+                <img src={this.state.skillPicture} alt="" />
+              </div>
+
+              <input type="file" onChange={e => this.handleFileUpload(e)} />
             </div>
-            
-            <input type="file" onChange={e => this.handleFileUpload(e)} />
-          </div>
-          <input className="btn login" type="submit" value="Añadir Habilidad" />
+            <input className="btn login" type="submit" value="Añadir Habilidad" />
           </section>
         </form>
       </Form>

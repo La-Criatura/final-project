@@ -15,21 +15,24 @@ export default class InputMess extends Component {
         this.props.info(this.state.text)
         this.setState({ ...this.state, text: "" })
     }
-    // Este componente renderiza el input para escribir mensajes dentro del chat
+    
     render() {
         return (
             <form>
-                <div >
+            <div className="chatButton">
+                <div className="textForm">
                     <input
                         onChange={e => {
                             this.handlerText(e);
                         }}
                         type="text"
-                        placeholder="Your message"
+                        placeholder="   Escribe tu mensaje..."
                         value={this.state.text}
+                        
                     />
                 </div>
-                <button type="submit" onClick={(e) => { this.handlerSubmit(e)}}>Send</button>
+                <button className="btn btn-info" type="submit" onClick={(e) => { this.handlerSubmit(e) }}>Send</button>
+                </div>
             </form>
         )
     }

@@ -61,24 +61,27 @@ export default class EditUser extends Component {
     }
 
     render() {
-        
+
         return (
             <Form>
-                <div className="d-flex flex-column justify-content-center align-item-center text-center">
-                    <h1>Perfil de Usuario</h1>
-                    <form onSubmit={this.handleFormSubmit} className="d-flex" action="/api/skills">
-                        
-                         <div className="d-flex flex-column">
+
+                <div className="d-flex">
+                    <div className="d-flex flex-column text-center align-items-center px-5 pt-2">
+                        <h1 className="mt-3">Perfil de Usuario</h1>
+                        <form onSubmit={this.handleFormSubmit} className="d-flex" action="/api/skills">
+
+                            <div>
                                 <div>
-                                <Form.Label>Nombre</Form.Label>
-                                <Form.Group controlId="formBasicInput"></Form.Group>
+                                    <Form.Label className="m-0 p-0">Nombre</Form.Label>
+                                    <Form.Group controlId="formBasicInput"></Form.Group>
                                     <input className="form-control form-control-large" type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
-                                    </div>
+                                </div>
 
                                 <div>
-                                   <Form.Label>Ciudad</Form.Label>
-                                   <Form.Group controlId="formBasicInput"></Form.Group>
-                                    <select className="form-control" name="city" value={this.state.city} onChange={e => this.handleChange(e)}>
+                                    <Form.Label>Ciudad</Form.Label>
+                                    <Form.Group controlId="formBasicInput"></Form.Group>
+                                    <select className="form-control " name="city" value={this.state.city} onChange={e => this.handleChange(e)}>
+                                        <option value="">Seleccionar:</option>
                                         <option value="Barcelona">Barcelona</option>
                                         <option value="Madrid">Madrid</option>
                                         <option value="Sevilla">Sevilla</option>
@@ -86,32 +89,35 @@ export default class EditUser extends Component {
                                         <option value="Valencia">Valencia</option>
                                         <option value="Zaragoza">Zaragoza</option>
                                     </select>
-                                    </div>
-                         
-                                  
+                                </div>
 
-                                    <div className="d-flex flex-column">
-                                    <div>
-                                <Form.Label>Correo electrónico</Form.Label>
-                                <Form.Group controlId="formBasicInput"></Form.Group>
+
+
+
+                                <div>
+                                    <Form.Label>Correo electrónico</Form.Label>
+                                    <Form.Group controlId="formBasicInput"></Form.Group>
                                     <input className="form-control" type="text" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
-                                    </div>
-                                    </div>
-                          
+                                </div>
+
+
                                 <div className="mb-3">
-                                <Form.Label>Foto de Perfil</Form.Label>
-                                <Form.Group controlId="formBasicInput"></Form.Group>
-                            <img src={this.state.picture} width="200" alt="" />
-                            <input className="form-control form-control-file text-center pt-1 ml-0" type="file" onChange={e => this.handleFileUpload(e)} />
+                                    <Form.Label>Foto de Perfil</Form.Label>
+                                    <Form.Group controlId="formBasicInput"></Form.Group>
+                                    <img src={this.state.picture} className="rounded-circle mb-3 border-bottom-0" width="200" alt="" />
+                                    <input className="form-control-file text-center pt-2" type="file" onChange={e => this.handleFileUpload(e)} />
+                                </div>
+
+                                <input className="btn btn-info mb-3" type="submit" value="Actualizar Perfil" />
                             </div>
-                        
-                        <input className="btn btn-info mb-3" type="submit" value="Actualizar Perfil" />
-                        </div>
-                    </form>
-                  
+                        </form>
+
+                    </div>
+                    <div className="d-flex flex-column justify-content-flex-end text-center align-items-center mt-3">
+                        <FavoriteSkills theUser={this.state}></FavoriteSkills>
+                    </div>
                 </div>
-                
-                <FavoriteSkills theUser={this.state}></FavoriteSkills>
+
             </Form>
         )
     }
