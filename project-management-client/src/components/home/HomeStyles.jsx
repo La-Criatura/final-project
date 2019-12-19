@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const HomeTag = styled.div`
-// width: 100vw
+${'' /* // width: 100vw
 
 //     h1 {
 //         font-size: 2.5rem;
@@ -127,7 +127,7 @@ const HomeTag = styled.div`
 //         border:'2px solid black';
 //     }
 
-    
+     */}
 
     
 `;
