@@ -50,40 +50,45 @@ class Navbar extends Component {
     this.fetchUser()
     if (this.state.loggedInUser) {
       return (
-        <NavBar>
-          <section className="nav-left-side">
-            <Link to='/dashboard'>Boomerang</Link>
-            <SearchBox />
-            <Link to='/new/skill' className="btn login add" style={{ textDecoration: 'none' }}>Añadir Habilidad</Link>
-            <Link to='/'><button className="btn signup" onClick={() => this.logoutUser()}>Logout</button></Link>
+        <NavBar bg="warning" className="w-100 d-flex justify-content-between align-items-center py-3">
+          {/* <section className="nav-left-side"> */}
+          <Col md="1" className="d-flex justify-content-center"><Link to='/dashboard'>Boomerang</Link></Col>
+          <Col md="5"><SearchBox /></Col>
 
-          </section>
-          <section className="nav-right-side">
-            <div >Hola {this.state.loggedInUser.username} | Tu crédito actual: {this.state.loggedInUser.credit}</div>
-            <Link to={`/${this.state.loggedInUser._id}`} style={{ textDecoration: 'none' }}>Editar Usuario</Link>
-          </section>
+
+          {/* </section> */}
+          {/* <section className="nav-right-side"> */}
+
+          <Col md="6" className="d-flex justify-content-end">
+            <div className="mr-3 pt-1">Hola {this.state.loggedInUser.username} | Crédito actual: {this.state.loggedInUser.credit}</div>
+            <Link to='/new/skill' ><Button variant="info">Añadir Habilidad</Button></Link>
+            <Link to={`/${this.state.loggedInUser._id}`}><Button variant="info ml-1">Editar Usuario</Button></Link>
+            <Link to='/'><Button variant="danger ml-1" onClick={() => this.logoutUser()}>Logout</Button></Link>
+
+          </Col>
+          {/* </section> */}
         </NavBar>
 
       )
     } else {
       return (
-        <NavBar bg="warning"  className="w-100 d-flex justify-content-around align-items-center py-3" > 
-
-        
-            {/* <section className="nav-left-side"> */}
-            <Col md="2" className="d-flex justify-content-center"><Link to='/'>Boomerang</Link></Col>
-            <Col md="6"><SearchBox /></Col>
-
-            {/* </section> */}
-            {/* <section className="nav-right-side"> */}
-           
-            <Col md="4" className="d-flex justify-content-end">
-              <Link className="mr-3" to='/login'><Button variant="info">Inicia Sesión</Button></Link>
-              <Link className="" to='/signup'><Button variant="info">Regístrate</Button></Link>
-            </Col>
+        <NavBar bg="warning" className="w-100 d-flex justify-content-around align-items-center py-3" >
 
 
-            {/* </section> */}
+          {/* <section className="nav-left-side"> */}
+          <Col md="2" className="d-flex justify-content-center"><Link to='/'>Boomerang</Link></Col>
+          <Col md="6"><SearchBox /></Col>
+
+          {/* </section> */}
+          {/* <section className="nav-right-side"> */}
+
+          <Col md="4" className="d-flex justify-content-end">
+            <Link className="mr-3" to='/login'><Button variant="info">Inicia Sesión</Button></Link>
+            <Link className="" to='/signup'><Button variant="info">Regístrate</Button></Link>
+          </Col>
+
+
+          {/* </section> */}
 
 
 

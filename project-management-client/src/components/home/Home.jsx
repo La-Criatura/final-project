@@ -8,7 +8,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import RandomSkillsListHome from '../skills/RandomSkillsHome';
 import MapContainerHome from '../map-component/mapComponentHome';
-import { Jumbotron, Container } from 'react-bootstrap'
+import { Jumbotron, Container, Card } from 'react-bootstrap'
 
 
 export default class Home extends Component {
@@ -39,21 +39,29 @@ export default class Home extends Component {
                     <Jumbotron className="d-flex flex-column align-items-center justify-content-center mb-0">
                         <img src="" alt="" />
                         <h1 className="display-4">Claim</h1>
-                        <p className="lead">Estamos esparando el copy de Sonia</p>
+                        <p className="lead">Estamos esperando el copy de Sonia</p>
                     </Jumbotron>
                 </Container>
-                <section>
+                <div className="text-center my-5">
+                    <Card className="d-flex flex-row justify-content-space-around w-100">
+                        <section className="d-flex flex-column justify-content-center">
+                            <h2>Nuestras Categorías</h2>
+                            <section className="card-group">
+                                <ul className="category-links d-flex justify-content-space-around">
+                                    <div className="card mr-2 px-4 py-3"> <div className="music"><Link to='/skills/category/musica' className='text-body'><img className="card-img-top" src="../../../images/music.png" /><p className="card-text ">Música</p></Link></div></div>
+                                    <div className="card mr-2 px-4 py-3"><div className="sports"><Link to='/skills/category/deporte' className='text-body'><img className="card-img-top" src="../../../images/raquet.png" /><p className="card-text">Deporte</p></Link></div></div>
+                                    <div className="card mr-2 px-4 py-3"><div className="education"><Link to='/skills/category/educacion' className='text-body'><img className="card-img-top" src="../../../images/open-book.png" /><p className="card-text">Educación</p></Link></div></div>
+                                    <div className="card mr-2 px-4 py-3"> <div className="cuisine"><Link to='/skills/category/cocina' className='text-body'><img className="card-img-top" src="../../../images/eat.png" /><p className="card-text">Cocina</p></Link></div></div>
+                                    <div className="card mr-2 px-4 py-3"><div className="languages"><Link to='/skills/category/idiomas' className='text-body'><img className="card-img-top" src="../../../images/receptionist.png" /><p className="card-text">Idiomas</p></Link></div></div>
+                                    <div className="card mr-2 px-4 py-3"><div className="other"><Link to='/skills/category/otros' className='text-body'><img className="card-img-top" src="../../../images/ball.png" /><p className="card-text">Otros</p></Link></div></div>
+                                </ul>
+                            </section>
+                        </section>
+                    </Card>
+                </div>
 
-                    <h2>Nuestras Categorías</h2>
-                    <ul className="category-links">
-                        <li className="music"><Link to='/skills/category/musica'><img src="../../../images/music.png" /><p>Música</p></Link></li>
-                        <li className="sports"><Link to='/skills/category/deporte'><img src="../../../images/raquet.png" /><p>Deporte</p></Link></li>
-                        <li className="education"><Link to='/skills/category/educacion'><img src="../../../images/open-book.png" /><p>Educación</p></Link></li>
-                        <li className="cuisine"><Link to='/skills/category/cocina'><img src="../../../images/eat.png" /><p>Cocina</p></Link></li>
-                        <li className="languages"><Link to='/skills/category/idiomas'><img src="../../../images/receptionist.png" /><p>Idiomas</p></Link></li>
-                        <li className="other"><Link to='/skills/category/otros'><img src="../../../images/ball.png" /><p>Otros</p></Link></li>
-                    </ul>
-                </section>
+
+
                 <section className="featured-skills">
                     <h2>Destacados</h2>
 

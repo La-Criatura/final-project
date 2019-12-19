@@ -26,8 +26,6 @@ router.post('/skills', (req, res, next) => {
     location: req.body.location,
     address: req.body.address
   }).then(response => {
-    console.log('Holi')
-    console.log(response)
     User.findByIdAndUpdate({ _id: response.owner }, { $push: { skills: response._id } })
       .then((userFound) => console.log(userFound))
     return response
@@ -74,7 +72,6 @@ router.get('/skills/:id', (req, res, next) => {
 
 // PUT route => to update a specific skill
 router.put('/skills/:id', (req, res, next) => {
-
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({
       message: 'Specified id is not valid'
