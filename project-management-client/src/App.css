@@ -155,8 +155,14 @@ table {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }
+
+.hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid lightgrey
+  }
 
 /* div.card:hover{
     width: 21rem;
@@ -251,4 +257,27 @@ a:hover {
 
 .btn.btn-info {
     width: 15vw;
+}
+
+a:hover 
+{
+     color: black; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+
+.home-image {
+    width: 70%;
+    margin-bottom: 2rem;
+}
+
+.scaled-image {
+  object-fit: cover;   
+  width: 100%;
+  object-position: center center;
+}
+
+.has-scroll-overflow {
+    overflow-y: scroll;
+    height: 33.5rem;
 }

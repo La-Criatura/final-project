@@ -1,72 +1,72 @@
 import styled from 'styled-components'
 
 const SkillDetailsTag = styled.div`
-    padding: 3rem 15rem;
+    // padding: 3rem 15rem;
 
-    .top-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    // .top-section {
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
 
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
+    //     h1 {
+    //         font-size: 2rem;
+    //         font-weight: 700;
+    //         margin-bottom: 1rem;
+    //     }
 
-        .fields-container {
-            width: 100%
-            display: flex
-            flex-direction: row
-            align-items: center
-            justify-content: space-between
-        }
+    //     .fields-container {
+    //         width: 100%
+    //         display: flex
+    //         flex-direction: row
+    //         align-items: center
+    //         justify-content: space-between
+    //     }
 
-        .data-container {
-            height: 3rem;
-            display: flex
-            flex-direction: row
-            align-items: center
-            background-color: lightgrey;
-            margin:0 1rem 1rem 1rem;
-            border: 2px solid grey;
-            padding: .5rem;
-            border-radius: 1.5rem;
-            width: 26rem;
+    //     .data-container {
+    //         height: 3rem;
+    //         display: flex
+    //         flex-direction: row
+    //         align-items: center
+    //         background-color: lightgrey;
+    //         margin:0 1rem 1rem 1rem;
+    //         border: 2px solid grey;
+    //         padding: .5rem;
+    //         border-radius: 1.5rem;
+    //         width: 26rem;
 
-            label {
-                margin-left: .5rem;
-                font-weight: 700;
-            }
+    //         label {
+    //             margin-left: .5rem;
+    //             font-weight: 700;
+    //         }
 
-            p {
-                margin-left: .5rem;
-                outline-style: none;
-                font-size: 1rem;
-                border: none;
-                background-color: rgba(0,0,0,0)
-            }
-        }
+    //         p {
+    //             margin-left: .5rem;
+    //             outline-style: none;
+    //             font-size: 1rem;
+    //             border: none;
+    //             background-color: rgba(0,0,0,0)
+    //         }
+    //     }
 
-        .map-container {
-            width: 100%
-            height: auto;
+    //     .map-container {
+    //         width: 100%
+    //         height: auto;
            
             
-            mapcontainer {
-                border-radius: 1rem;
-                border: 2px grey solid;
-            }
+    //         mapcontainer {
+    //             border-radius: 1rem;
+    //             border: 2px grey solid;
+    //         }
             
-        }
+    //     }
 
-        #map {
-            height: 400px;
-            box-sizing: border-box
-            border-radius: 2rem;
-            border: 2px grey solid;
-        }
-    }
+    //     #map {
+    //         height: 400px;
+    //         box-sizing: border-box
+    //         border-radius: 2rem;
+    //         border: 2px grey solid;
+    //     }
+    // }
 
 
     // margin-top: 5rem;

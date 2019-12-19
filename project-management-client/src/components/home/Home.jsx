@@ -37,7 +37,7 @@ export default class Home extends Component {
 
                 <Container className="my-3" >
                     <Jumbotron className="d-flex flex-column align-items-center justify-content-center mb-0 rounded-corners has-shadow">
-                        <img src="" alt="" />
+                        <img className="home-image" src='../../../images/boomerang-logo.png' alt="boomerang logo" />
                         <h1 className="display-4">Claim</h1>
                         <p className="lead">Estamos esperando el copy de Sonia</p>
                     </Jumbotron>

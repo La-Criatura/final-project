@@ -52,7 +52,7 @@ class Navbar extends Component {
       return (
         <NavBar bg="warning" className="w-100 d-flex justify-content-between align-items-center py-3">
           {/* <section className="nav-left-side"> */}
-          <Col md="1" className="d-flex justify-content-center"><Link to='/dashboard'>Boomerang</Link></Col>
+          <Col md="1" className="d-flex justify-content-center"><Link to='/dashboard'><img style={{width: '10rem', padding: '0 1rem'}} src='../../../images/boomerang-logo-negative.png' alt=""/></Link></Col>
           <Col md="5"><SearchBox /></Col>
 
 
@@ -61,9 +61,9 @@ class Navbar extends Component {
 
           <Col md="6" className="d-flex justify-content-end">
             <div className="mr-3 pt-1">Hola {this.state.loggedInUser.username} | Crédito actual: {this.state.loggedInUser.credit}</div>
-            <Link to='/new/skill' ><Button variant="info">Añadir Habilidad</Button></Link>
-            <Link to={`/${this.state.loggedInUser._id}`}><Button variant="info ml-1">Editar Usuario</Button></Link>
-            <Link to='/'><Button variant="danger ml-1" onClick={() => this.logoutUser()}>Logout</Button></Link>
+            <Link to='/new/skill' ><Button variant="dark">Añadir Habilidad</Button></Link>
+            <Link to={`/${this.state.loggedInUser._id}`}><Button variant="dark ml-1">Editar Usuario</Button></Link>
+            <Link to='/'><Button variant="outline-danger ml-1" onClick={() => this.logoutUser()}>Logout</Button></Link>
 
           </Col>
           {/* </section> */}
@@ -73,15 +73,11 @@ class Navbar extends Component {
     } else {
       return (
         <NavBar bg="warning" className="w-100 d-flex justify-content-around align-items-center py-3" >
-
-
           {/* <section className="nav-left-side"> */}
-          <Col md="2" className="d-flex justify-content-center"><Link to='/'>Boomerang</Link></Col>
+          <Col md="2" className="d-flex justify-content-center"><Link to='/'><img style={{width: '10rem'}} src='../../../images/boomerang-logo-black.png' alt=""/></Link></Col>
           <Col md="6"><SearchBox /></Col>
-
           {/* </section> */}
           {/* <section className="nav-right-side"> */}
-
           <Col md="4" className="d-flex justify-content-end">
             <Link className="mr-3 has-shadow" to='/login'><Button variant="info">Inicia Sesión</Button></Link>
             <Link className="has-shadow" to='/signup'><Button variant="info">Regístrate</Button></Link>

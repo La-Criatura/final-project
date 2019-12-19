@@ -58,8 +58,8 @@ class LocationSearchInput extends React.Component {
                     <div className="search-box-container">
                         <input
                             {...getInputProps({
-                                placeholder: 'Search Places ...',
-                                className: 'location-search-input',
+                                placeholder: 'Introduce la dirección deseada ...',
+                                className: 'col-12 rounded form-control',
                             })}
                         />
                         <div>

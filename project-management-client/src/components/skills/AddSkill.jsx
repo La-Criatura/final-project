@@ -4,7 +4,7 @@ import AuthService from '../auth/auth-service'
 import PlacesAutocomplete from 'react-places-autocomplete';
 import LocationSearchInput from '../map-component/marketMap';
 import AddSkillTag from './SkillStyles/AddSkillStyles';
-import { Button, Form } from 'react-bootstrap'
+import { Button, Form, Container } from 'react-bootstrap'
 
 
 class AddSkill extends Component {
@@ -67,25 +67,29 @@ class AddSkill extends Component {
 
     return (
 
-      <Form>
-        <h1>Nueva Habilidad</h1>
-        <form onSubmit={this.handleFormSubmit}>
-          <section className="top-section">
-            <div className="left-section d-flex" >
-              <div className="input-container">
+      <Form className="d-flex flex-column align-items-center col-12 mt-4">
+        <h1 className="mb-4">Nueva Habilidad</h1>
+        <form onSubmit={this.handleFormSubmit} className="d-flex flex-column align-items-center col-8">
+          <Container className="d-flex col-12">
+
+            <div className="d-flex flex-column col-6" >
+
+              <div className="form-group">
                 <label>Nombre:</label>
-                <input type="text" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
+                <input type="text" className="form-control" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
               </div>
-              <div className="input-container textarea-container">
+
+              <div className="form-group">
                 <label>Descripción:</label>
-                <textarea name="description" value={this.state.description} onChange={e => this.handleChange(e)} />
+                <textarea name="description" className="form-control" value={this.state.description} onChange={e => this.handleChange(e)} />
               </div>
+
             </div>
-            <div className="right-section d-flex">
-              <div className="input-container category">
+
+            <div className="right-section d-flex flex-column col-6">
+              <div className="form-group d-flex flex-column">
                 <label>Categoría:</label>
-                <select name="category" value={this.state.category} onChange={e => this.handleChange(e)}>
-                  
+                <select name="category" className="form-control" value={this.state.category} onChange={e => this.handleChange(e)}>
                   <option value="musica">Música</option>
                   <option value="deporte">Deporte</option>
                   <option value="educacion">Educación</option>
@@ -94,24 +98,26 @@ class AddSkill extends Component {
                   <option value="otros">Otros</option>
                 </select>
               </div>
-              <div className="dropdown-container">
+              <div className="dropdown-container form-group">
                 <label>Dirección:</label>
-                <LocationSearchInput className="selection-box" onAddressChange={this.handleAddressChange}></LocationSearchInput>
+                <LocationSearchInput onAddressChange={this.handleAddressChange}></LocationSearchInput>
               </div>
             </div>
 
-          </section>
-          <section className="bottom-section">
-            <div>
+          </Container>
+          <div className="hr col-10"></div>
+          <Container className="col-12 d-flex flex-column align-items-center">
+            <div className="d-flex flex-column col-12 mb-4">
               <label>Imagen:</label>
-              <div className="image-container">
-                <img src={this.state.skillPicture} alt="" />
-              </div>
-
-              <input type="file" onChange={e => this.handleFileUpload(e)} />
+              <Container className="col-12 p-0 rounded mb-2 form-control">
+              <img className="col-12 p-0 rounded" src={this.state.skillPicture} alt=""/>
+              </Container>
+                
+              
+              <input className="form-control p-1" type="file" onChange={e => this.handleFileUpload(e)} />
             </div>
-            <input className="btn login" type="submit" value="Añadir Habilidad" />
-          </section>
+            <input className="btn btn-info" type="submit" value="Añadir Habilidad" />
+          </Container>
         </form>
       </Form>
 
