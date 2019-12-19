@@ -4,6 +4,7 @@ import AuthService from '../auth/auth-service'
 import PlacesAutocomplete from 'react-places-autocomplete';
 import LocationSearchInput from '../map-component/marketMap';
 import AddSkillTag from './SkillStyles/AddSkillStyles';
+import { Button, Form } from 'react-bootstrap'
 
 
 class AddSkill extends Component {
@@ -66,11 +67,11 @@ class AddSkill extends Component {
     
     return (
       
-      <AddSkillTag>
+      <Form>
         <h1>Nueva Habilidad</h1>
         <form onSubmit={this.handleFormSubmit}>
           <section className="top-section">
-            <div className="left-section" >
+            <div className="left-section d-flex" >
               <div  className="input-container">
                 <label>Nombre:</label>
                 <input type="text" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
@@ -80,7 +81,7 @@ class AddSkill extends Component {
                 <textarea name="description" value={this.state.description} onChange={e => this.handleChange(e)} />
               </div>
             </div>
-            <div className="right-section">
+            <div className="right-section d-flex">
               <div className="input-container category">
                 <label>Categoría:</label>
                 <select name="category" value={this.state.category} onChange={e => this.handleChange(e)}>
@@ -111,7 +112,7 @@ class AddSkill extends Component {
           <input className="btn login" type="submit" value="Añadir Habilidad" />
           </section>
         </form>
-      </AddSkillTag>
+      </Form>
 
 
 

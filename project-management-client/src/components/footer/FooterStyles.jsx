@@ -2,32 +2,35 @@ import styled from 'styled-components'
 
 const FooterTag = styled.div`
 align-self: flex-end;
-background-color: #053763;
+background-color: #303030;
 color: white;
-width: 100vw
+width: 100vw;
 display: flex;
-justify-content: center
+justify-content: center;
 padding: 2rem 0;
 margin-top: 3rem;
 div {
     width: 80vw;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 
     h3 {
         font-size: 2rem;
-        font-weight: 600;
+        font-weight: 500;
         margin-bottom: .6rem;
     }
 
     h4 {
-        font-size: 1.2rem;
-        font-weight: 600;
+        font-size: 1.1rem;
+        color: #848484;
+        font-weight: 400;
         margin-bottom: .6rem;
     }
 
     p {
-        margin-bottom: .5rem;
+        margin-bottom: 1rem;
+        font-weight: 100;
+        font-size: 0.8rem;
     }
 }
 `;

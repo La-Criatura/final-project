@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import AuthService from '../auth-service';
 import { Link } from 'react-router-dom';
 import LoginTag from './LoginStyles';
+//import Button from 'react-bootstrap/Button';
+import { Button, Form } from 'react-bootstrap'
 
 class Login extends Component {
   constructor(props) {
@@ -29,30 +31,39 @@ class Login extends Component {
 
   render() {
     return (
-      <LoginTag>
-        <div className="container">
-          <header>
-            <Link to={"/"}>Boomerang</Link>
-            <div>
-              <h1>Bienvenido de nuevo</h1>
-              <p>Escribe tus datos de inicio de sesión</p>
-            </div>
-            <Link to={"/"}> X</Link>
-          </header>
-          <form onSubmit={this.handleFormSubmit}>
-            <label>Username:</label>
-            <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
-            <label>Password:</label>
-            <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
-            <input className="btn login" type="submit" value="Inicia Sesión" />
-          </form>
-          <section className="bottom-section">
-            <p>¿No tienes cuenta?</p>
-            <Link to={"/signup"}>Regístrate</Link>
-          </section>
-        </div>
+      <Form>
+        <header className="d-flex flex-column">
+          <div className="d-flex justify-content-between py-3 mb-3">
+            <Link to={"/"} className='text-body'>Boomerang</Link>
+            <Link to={"/"} className='text-body'> X</Link>
+          </div>
 
-      </LoginTag >
+          <div className="mb-3 text-center">
+            <h1>Bienvenido de nuevo</h1>
+            <p>Escribe tus datos de inicio de sesión</p>
+          </div>
+        </header>
+
+        <form onSubmit={this.handleFormSubmit} className="d-flex flex-column justify-content-center align-items-center">
+          <Form.Label>Nombre de Usuario </Form.Label>
+          <Form.Group controlId="formBasicInput"></Form.Group>
+            <input className="form-control form-control-lg" type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
+          
+
+          <Form.Group controlId="formBasicPassword"></Form.Group>
+          <Form.Label>Contraseña </Form.Label>
+          <input className="form-control form-control-lg" type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
+         <input className="btn btn-info mt-3 mb-3" type="submit" value="Inicia Sesión" />
+
+        </form>
+    
+        <section className="bottom-section d-flex flex-column justify-content-center align-items-center">
+          <p>¿No tienes cuenta?</p>
+          <Link to={"/signup"}><Button variant="outline-info mb-3">Regístrate</Button></Link>
+         
+        </section>
+      
+      </Form>
     )
   }
 }
