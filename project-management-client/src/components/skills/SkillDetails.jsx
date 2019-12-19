@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import EditSkill from "./EditSkill";
 import MapContainer from "../map-component/mapComponent";
 import SkillDetailsTag from "./SkillStyles/SkillDetailsStyles";
+import { Container } from 'react-bootstrap'
 
 class SkillDetails extends Component {
   constructor(props) {
@@ -32,7 +33,9 @@ class SkillDetails extends Component {
     } else {
       if (this.state.owner._id === this.props.loggedInUser._id) {
         return (
-          <EditSkill
+          
+            
+            <EditSkill 
             theSkill={this.state}
             getTheSkill={this.getSingleSkill}
             {...this.props}
@@ -41,9 +44,12 @@ class SkillDetails extends Component {
               Eliminar Habilidad
           </button>
           </EditSkill>
+          
+          
+          
         );
       } else {
-        return <p>No tienes acceso a esta sección</p>;
+        return ;
       }
     }
   };
@@ -81,17 +87,17 @@ class SkillDetails extends Component {
     e.preventDefault()
     const favouriteSkill = this.state._id
     let favouritesArray = this.state.user.favourites
-    favouritesArray= favouritesArray.push(favouriteSkill)
+    favouritesArray = favouritesArray.push(favouriteSkill)
     const favourites = favouritesArray
-    
-    axios.put(`${process.env.REACT_APP_URL}/${this.state.user._id}`, { $push: {favourites: favouriteSkill} }, { withCredentials: true })
-    .then(() => {
-        this.setState({user:{favourites: favouritesArray}});
-    })
-    .then(() => {
-        
+
+    axios.put(`${process.env.REACT_APP_URL}/${this.state.user._id}`, { $push: { favourites: favouriteSkill } }, { withCredentials: true })
+      .then(() => {
+        this.setState({ user: { favourites: favouritesArray } });
+      })
+      .then(() => {
+
         this.props.history.push('/dashboard')
-    })
+      })
 
   }
 
@@ -117,39 +123,53 @@ class SkillDetails extends Component {
     } else {
       console.log(this.state.location.coordinates[1]);
       return (
-        <SkillDetailsTag>
-          <div className="top-section">
-            <h1>{this.state.title}</h1>
+        <Container className="d-flex flex-column align-items-center col-12 mt-3">
+          <Container className="d-flex justify-content-center col-12 mt-3 mb-5">
+            <Container className="col-6 p-3 m-2 rounded has-shadow">
+              <div className="h-100 d-flex flex-column justify-content-between">
+                <div className="mb-15">
+                  <h2 className="font-weight-bold">{this.state.title}</h2>
+                  <div className="form-group mb-4">
+                    <label className="font-weight-bold">Autor</label><p className="form-control bg-light">{this.state.owner.username}</p>
+                  </div>
+                  <div className="form-group mb-4">
+                    <label className="font-weight-bold">Dirección</label><p className="form-control bg-light" >{this.state.address}</p>
+                  </div>
 
-            <div className="fields-container">
-              <div className="data-container">
-                <label>Descripción:</label><p>{this.state.description}</p>
-              </div>
-              <div className="data-container">
-                <label>Autor:</label><p>{this.state.owner.username}</p>
-              </div>
-              <div className="data-container">
-                <label>Valoración:</label><p>{this.state.averageRating}</p>
-              </div>
-            </div>
+                  <div className="form-group mb-4">
+                    <label className="font-weight-bold">Descripción</label><textarea className="form-control bg-light has-scroll-overflow" >{this.state.description}</textarea>
+                  </div>
 
+                  <div >
+                    <label className="font-weight-bold">¿Dónde?</label>
+                    <MapContainer className="form-control" location={this.state.location}></MapContainer>
+                  </div>
+                </div>
+                <div className="pt-3">
+                <button className="btn btn-dark col-12" onClick={(e) => this.addToFavourites(e)}>Añadir a Favoritos</button>
+                </div>
+                
+              </div>
+              
+          </Container>
+          <React.Fragment>
+              {this.renderEditForm()}
+          </React.Fragment>
+          </Container>
 
-            <div className="map-container">
-              <MapContainer location={this.state.location}></MapContainer>
-            </div>
-          </div>
-          <div className="bottom-section">
-            <div>{this.renderEditForm()}</div>
-            <Link to={{ pathname: "/chat", aboutProps: { owner: this.state.owner } }}>Chat</Link>
-            <button onClick={() => this.updateCredits()}>Pacto</button>
-            <Link to={"/skills"}>Back to skills</Link>
-            <button onClick={(e) => this.addToFavourites(e)}>Añadir a Favoritos</button>
-          </div>
-          <div>
-            <label>Valorar:</label>
-            <input type="text" name="email"/>
-          </div>
-        </SkillDetailsTag>
+            
+            
+           
+
+          <Container className="col-12 d-flex justify-content-center">
+            <Link className="btn btn-dark mx-2 col-2" to={{ pathname: "/chat", aboutProps: { owner: this.state.owner } }}>Chat</Link>
+            <button className="btn btn-success mx-2 col-2" onClick={() => this.updateCredits()}>Boomerang</button>
+            <Link className="btn btn-dark mx-2 col-2" to={"/skills"}>Back to skills</Link>
+
+          </Container>
+
+        </Container>
+
       );
     }
   }

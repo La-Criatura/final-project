@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import AuthService from '../auth/auth-service'
 import LocationSearchInput from '../map-component/marketMap';
+import { Form, Container, Button } from 'react-bootstrap'
 
 class EditSkill extends Component {
   constructor(props) {
@@ -83,42 +84,53 @@ class EditSkill extends Component {
 
   render() {
     return (
-      <div>
-        <hr />
-        <h3>Editar Habilidad</h3>
+      <Container className="bg-light p-3 rounded has-shadow m-2">
 
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Nombre:</label>
-          <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)} />
-          <br />
-          <label>Descripción:</label>
-          <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
-          <br />
-          <label>Categoría:</label>
-          <select name="category" value={this.state.category} onChange={e => this.handleChange(e)}>
-            <option value="musica">Música</option>
-            <option value="deporte">Deporte</option>
-            <option value="educacion">Educación</option>
-            <option value="cocina">Cocina</option>
-            <option value="idiomas">Idiomas</option>
-            <option value="otros">Otros</option>
-          </select>
-          <br />
-        
-          <div className="dropdown-container">
-            <label>Dirección:</label>
+        <h2 className="font-weight-bold">Editar Habilidad</h2>
+
+        <Form onSubmit={this.handleFormSubmit}>
+          <div className="form-group mb-4">
+            <label className="font-weight-bold">Nombre</label>
+            <input className="form-control" type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)} />
+          </div>
+
+          <div className="form-group mb-4">
+            <label className="font-weight-bold">Categoría</label>
+            <select className="form-control" name="category" value={this.state.category} onChange={e => this.handleChange(e)}>
+              <option value="">Seleccionar:</option>
+              <option value="musica">Música</option>
+              <option value="deporte">Deporte</option>
+              <option value="educacion">Educación</option>
+              <option value="cocina">Cocina</option>
+              <option value="idiomas">Idiomas</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+
+          <div className="form-group mb-4">
+            <label className="font-weight-bold">Descripción</label>
+            <textarea className="form-control" name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
+          </div>
+
+
+
+
+
+          <div className="form-group mb-4">
+            <label className="font-weight-bold">Dirección</label>
             <LocationSearchInput className="selection-box" onAddressChange={this.handleAddressChange}></LocationSearchInput>
           </div>
 
-          <label>Foto:</label>
-          <br />
-          <img src={this.state.skillPicture} alt="" />
-          <input type="file" onChange={e => this.handleFileUpload(e)} />
-          <br />
-          <input type="submit" value="Actualizar" />
-        </form>
+          <div className="form-group mb-4 d-flex flex-column">
+            <label className="font-weight-bold">Foto</label>
+            <img className="mb-3 scaled-image" src={this.state.skillPicture} alt="" />
+            <input className="form-control p-1" type="file" onChange={e => this.handleFileUpload(e)} />
+          </div>
 
-      </div>
+          <input className="btn btn-dark col-12" type="submit" value="Actualizar" />
+        </Form>
+
+      </Container>
 
     )
   }

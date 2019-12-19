@@ -48,13 +48,13 @@ export default class SearchBox extends Component {
     render() {
         return (
             <Form className="d-flex align-items-center">
-                <Form.Control className="mr-3" placeholder="Buscar Habilidad" onChange={(e) => { this.searchSkill(e) }} />
+                <Form.Control className="mr-1" placeholder="Buscar Habilidad" onChange={(e) => { this.searchSkill(e) }} />
                 {/* {this.state.skillsToFilter.map((initialSkill, idx) => <div key={idx}> {initialSkill.title}</div>)} */}
                 <Link className="search-btn" to={{pathname: '/search-results',
                     aboutProps: {
                         theFilteredSkills: this.state.skillsToFilter
                     }
-                }}><Button variant="outline-info">Buscar</Button></Link>
+                }}><Button variant="outline-dark">Buscar</Button></Link>
             </Form>
         )
     }
