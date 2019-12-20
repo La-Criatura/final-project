@@ -127,19 +127,19 @@ authRoutes.get('/loggedin', (req, res, next) => {
   
 });
 
-// authRoutes.get('/:id', (req, res, next) => {
-//     // req.isAuthenticated() is defined by passport
-//     if (req.isAuthenticated()) {
-//         User.findById(req.params.id)
-//         .populate('favourites')
-//         .then ((res) => {
-//             res.status(200).json(res);
-//             return;
-//         })
+authRoutes.get('/:id', (req, res, next) => {
+    // req.isAuthenticated() is defined by passport
+    if (req.isAuthenticated()) {
+        User.findById(req.params.id)
+        .populate('favourites')
+        .then ((res) => {
+            res.status(200).json(res);
+            return;
+        })
         
-//     }
-//     res.status(403).json({ message: 'Unauthorized' });
-// });
+    }
+    res.status(403).json({ message: 'Unauthorized' });
+});
 
 authRoutes.put('/:id', (req, res, next) => {
 

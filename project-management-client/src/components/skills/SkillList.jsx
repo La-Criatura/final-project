@@ -29,21 +29,25 @@ class SkillList extends Component {
   render() {
     return (
       <SkillListTag>
-        <ul>
-          {this.state.listOfSkills.map(skill => {
-            return (
-              <li key={skill._id}>
-                <Link to={`/skills/${skill._id}`}>
-                  <SkillCard theSkill={skill} />
-                </Link>
-              </li>
-            )
-          })
-          }
-        </ul>
-        {/* <div style={{width: '40%', float:"right"}}>
+        <div style={{'min-height': '40rem'}}>
+          <h1 className="display-4 font-weight-bold text-center">Nuestro Catálogo de Habilidades</h1>
+          <ul>
+            {this.state.listOfSkills.map(skill => {
+              return (
+                <li key={skill._id}>
+                  <Link to={`/skills/${skill._id}`}>
+                    <SkillCard theSkill={skill} />
+                  </Link>
+                </li>
+              )
+            })
+            }
+          </ul>
+          {/* <div style={{width: '40%', float:"right"}}>
             <AddSkill getData={() => this.getAllSkills()}/> 
         </div> */}
+        </div>
+
 
       </SkillListTag>
 

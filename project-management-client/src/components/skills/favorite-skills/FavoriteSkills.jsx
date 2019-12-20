@@ -8,7 +8,8 @@ import SkillCard from '../skill-card/SkillCard'
 export default class FavoriteSkills extends Component {
     constructor(props) {
         super(props)
-        this.user = JSON.parse(JSON.stringify(this.props.theUser))
+        // this.user = JSON.parse(JSON.stringify(this.props.theUser))
+        this.user = {...this.props.theUser}
         this.state = { user: this.user }
 
     }

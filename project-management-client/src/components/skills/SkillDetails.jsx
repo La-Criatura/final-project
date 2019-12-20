@@ -92,13 +92,10 @@ class SkillDetails extends Component {
 
     axios.put(`${process.env.REACT_APP_URL}/${this.state.user._id}`, { $push: { favourites: favouriteSkill } }, { withCredentials: true })
       .then(() => {
-        this.setState({ user: { favourites: favouritesArray } });
-      })
-      .then(() => {
-
+        this.setState({ user: { favourites: favouritesArray } })
         this.props.history.push('/dashboard')
       })
-
+      
   }
 
   // DELETE Skill:
@@ -161,7 +158,7 @@ class SkillDetails extends Component {
             
            
 
-          <Container className="col-12 d-flex justify-content-center">
+          <Container className="col-12 d-flex justify-content-center mb-5">
             <Link className="btn btn-dark mx-2 col-2" to={{ pathname: "/chat", aboutProps: { owner: this.state.owner } }}>Chat</Link>
             <button className="btn btn-success mx-2 col-2" onClick={() => this.updateCredits()}>Boomerang</button>
             <Link className="btn btn-dark mx-2 col-2" to={"/skills"}>Back to skills</Link>

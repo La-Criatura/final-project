@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import SkillCardTag from './SkillCardStyles'
 import { Card } from 'react-bootstrap'
+import axios from 'axios'
 
 export default class SkillCard extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            owner: {}
+        }
     }
+
+
     render() {
         return (
             // <SkillCardTag >
@@ -22,7 +28,7 @@ export default class SkillCard extends Component {
                 <Card.Img style={{ height: '10rem', 'object-fit': 'cover'}} variant="top" src={this.props.theSkill.skillPicture} alt=""/>
                 <Card.Body>
                     <Card.Title className="text-body no-decoration">{this.props.theSkill.title}</Card.Title>
-                    <Card.Subtitle className="text-body no-decoration">{this.props.theSkill.owner.username}</Card.Subtitle>
+                    <Card.Subtitle className="text-body no-decoration">{(this.props.theSkill.category).charAt(0).toUpperCase() + (this.props.theSkill.category).slice(1)}</Card.Subtitle>
                     <Card.Text className="wrapped-text text-body no-decoration">{this.props.theSkill.description}</Card.Text>
                 </Card.Body>
 
