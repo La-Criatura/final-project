@@ -31,8 +31,8 @@ export default class FavoriteSkills extends Component {
     render() {
 
         return (
-            <div className="bg-info text-white pt-2 px-2 rounded has-shadow">
-                <h1>Favoritos</h1>
+            <div className="bg-info text-white pt-2 px-2 rounded has-shadow" style={{height: '44rem'}}>
+                <h1 className="mt-3">Favoritos</h1>
                 <ul className="has-scroll-overflow">
                     {this.state.user.favourites.map((skill, idx) => <li key={idx} className="mb-3"><Link to={`/skills/${skill._id}`}><SkillCardB theSkill={skill}></SkillCardB></Link></li>)}
                 </ul>
