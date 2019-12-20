@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import SkillFilteredListTag from './SkillStyles/SkillListStyles';
 
 import SkillInfo from './skill-info/SkillInfo';
+import SkillCard from './skill-card/SkillCard';
 
 
 class RandomSkillsList extends Component {
@@ -49,12 +50,12 @@ class RandomSkillsList extends Component {
     let randomArray = this.randomPositions(this.state.listOfSkills.length)
     return (
       <div>
-        <ul>
+        <ul className="d-flex my-3">
           {this.state.listOfSkills.filter((elm,idx) => randomArray.includes(idx)).map(skill => {
             return (
               <li key={skill._id}>
                 <Link to={`/skills/${skill._id}`}>
-                <SkillInfo theSkill={skill} /> 
+                <SkillCard theSkill={skill} /> 
                 </Link>
               </li>
             )

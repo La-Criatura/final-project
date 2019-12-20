@@ -67,9 +67,9 @@ class AddSkill extends Component {
 
     return (
 
-      <Form className="d-flex flex-column align-items-center col-12 mt-4">
+      <Form className="d-flex flex-column align-items-center col-6 mt-4 bg-light has-shadow m-5 p-5 rounded" >
         <h1 className="mb-4">Nueva Habilidad</h1>
-        <form onSubmit={this.handleFormSubmit} className="d-flex flex-column align-items-center col-8">
+        <form onSubmit={this.handleFormSubmit} className="d-flex flex-column align-items-center col-12">
           <Container className="d-flex col-12">
 
             <div className="d-flex flex-column col-6" >

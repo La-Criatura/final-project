@@ -41,7 +41,7 @@ class Signup extends Component {
 
   render() {
     return (
-      <Form>
+      <Form className="bg-light has-shadow col-6 m-5 px-5 pb-5 rounded">
 
         <header className="d-flex flex-column">
           <div className="d-flex justify-content-between py-3 mb-3">

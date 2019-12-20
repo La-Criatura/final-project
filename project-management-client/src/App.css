@@ -281,3 +281,17 @@ a:hover
     overflow-y: scroll;
     height: 33.5rem;
 }
+
+.font-size {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.has-parallax {
+    background-image: url('https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+    /* height: 30rem; */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

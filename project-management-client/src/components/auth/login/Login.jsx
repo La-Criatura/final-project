@@ -31,7 +31,7 @@ class Login extends Component {
 
   render() {
     return (
-      <Form>
+      <Form className="bg-light has-shadow col-6 m-5 p-5 rounded">
         <header className="d-flex flex-column">
           <div className="d-flex justify-content-between mb-1">
             
@@ -44,7 +44,7 @@ class Login extends Component {
         </header>
 
         <form onSubmit={this.handleFormSubmit} className="d-flex flex-column justify-content-center align-items-center">
-        <Form.Group controlId="formBasicInput"></Form.Group>
+        <Form.Group className="px-3" controlId="formBasicInput"></Form.Group>
           <Form.Label>Nombre de Usuario </Form.Label>
           
             <input className="form-control form-control-lg" type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
