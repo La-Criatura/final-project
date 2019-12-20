@@ -54,7 +54,7 @@ class RandomSkillsList extends Component {
           {this.state.listOfSkills.filter((elm,idx) => randomArray.includes(idx)).map(skill => {
             return (
               <li key={skill._id}>
-                <Link to={`/skills/${skill._id}`}>
+                <Link className="no-decoration" to={`/skills/${skill._id}`}>
                 <SkillCard theSkill={skill} /> 
                 </Link>
               </li>

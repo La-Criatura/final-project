@@ -306,3 +306,7 @@ a:hover
     width: 22rem;
     
 }
+
+.no-decoration:hover {
+    text-decoration: none;
+}
