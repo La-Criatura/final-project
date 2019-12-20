@@ -132,7 +132,7 @@ table {
 
 .main-site-container {
     width: 100vw;
-    /* padding-top: 5rem; */
+    padding-top: 5rem;
     /* background-color: #E7F1FD; */
     display: flex;
     flex-direction: column;

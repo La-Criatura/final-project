@@ -39,7 +39,7 @@ export default class Home extends Component {
                     <div className="card-img-overlay d-flex flex-column align-items-center">
                         <h5 className="card-title display-4 font-weight-bold mt-3">Intercambia tus <span className="text-warning">Habilidades</span></h5>
                         <p className="card-text font-weight-bold mb-1">¿Te has preguntado qué hacer con todo lo que sabes y lo que puedes ganar compartiéndolo? </p>
-                        <p className="card-text font-weight-bold mb-3">¿Quieres aprender nuevas habilidad y conocer gente que pueda ayudarte a hacerlo? </p>
+                        <p className="card-text font-weight-bold mb-3">¿Quieres aprender nuevas habilidades y conocer gente que pueda ayudarte a hacerlo? </p>
                         <p className="card-text font-size">Bienvenido a <span className="text-dark">Boomerang</span></p>
                     </div>
                 </div>

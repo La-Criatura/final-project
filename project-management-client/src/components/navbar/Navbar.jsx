@@ -50,7 +50,7 @@ class Navbar extends Component {
     this.fetchUser()
     if (this.state.loggedInUser) {
       return (
-        <NavBar bg="warning" className="w-100 d-flex justify-content-between align-items-center py-3">
+        <NavBar bg="warning" className="w-100 d-flex justify-content-between align-items-center py-3 fixed-top">
           {/* <section className="nav-left-side"> */}
           <Col md="1" className="d-flex justify-content-center"><Link to='/dashboard'><img style={{width: '10rem', padding: '0 1rem'}} src='../../../images/boomerang-logo-black.png' alt=""/></Link></Col>
           <Col md="5"><SearchBox /></Col>
@@ -72,7 +72,7 @@ class Navbar extends Component {
       )
     } else {
       return (
-        <NavBar bg="warning" className="w-100 d-flex justify-content-around align-items-center py-3" >
+        <NavBar bg="warning" className="w-100 d-flex justify-content-around align-items-center py-3 fixed-top" >
           {/* <section className="nav-left-side"> */}
           <Col md="2" className="d-flex justify-content-center"><Link to='/'><img style={{width: '10rem'}} src='../../../images/boomerang-logo-black.png' alt=""/></Link></Col>
           <Col md="6"><SearchBox /></Col>
