@@ -145,6 +145,7 @@ class SkillDetails extends Component {
                 <div className="pt-3">
                 <button className="btn btn-dark col-12" onClick={(e) => this.addToFavourites(e)}>Añadir a Favoritos</button>
                 </div>
+
                 
               </div>
               
