@@ -162,7 +162,7 @@ table {
     margin-bottom: 1rem;
     border: 0;
     border-top: 1px solid lightgrey
-  }
+}
 
 /* div.card:hover{
     width: 21rem;
@@ -199,12 +199,12 @@ a:hover {
     padding: 1rem;
     height: 50vh;
     overflow-y: scroll;
-    border:1px solid grey;
-   
+    border: 1px solid grey;
+
 }
 
 .chat {
-    margin-top:1rem;
+    margin-top: 1rem;
     border: solid 2px grey;
     background-color: lightgrey;
     display: flex;
@@ -213,14 +213,14 @@ a:hover {
     align-items: center;
 }
 
-.chat h5{
-    color:grey;
-    font-size:15px;
+.chat h5 {
+    color: grey;
+    font-size: 15px;
 }
 
-.chat h5 span{
-    color:red;
-    font-size:15px;
+.chat h5 span {
+    color: red;
+    font-size: 15px;
 }
 
 .chat h4 {
@@ -259,11 +259,10 @@ a:hover {
     width: 15vw;
 }
 
-a:hover 
-{
-     color: black; 
-     text-decoration:none; 
-     cursor:pointer;  
+a:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .home-image {
@@ -272,9 +271,9 @@ a:hover
 }
 
 .scaled-image {
-  object-fit: cover;   
-  width: 100%;
-  object-position: center center;
+    object-fit: cover;
+    width: 100%;
+    object-position: center center;
 }
 
 .has-scroll-overflow {
@@ -298,11 +297,15 @@ a:hover
 
 .has-growth {
     width: 20rem;
-    
+
     transition: all .5s ease;
 }
 
 .has-growth:hover {
     width: 22rem;
-    
+
+}
+
+.no-decoration:hover {
+    text-decoration: none;
 }
