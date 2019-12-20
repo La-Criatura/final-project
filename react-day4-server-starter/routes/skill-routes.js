@@ -80,6 +80,7 @@ router.put('/skills/:id', (req, res, next) => {
   }
 
   Skill.findByIdAndUpdate(req.params.id, req.body)
+    .populate("owner")
     .then(() => {
       res.json({
         message: `Skill with ${req.params.id} is updated successfully.`
