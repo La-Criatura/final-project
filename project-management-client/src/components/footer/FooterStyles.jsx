@@ -4,10 +4,11 @@ const FooterTag = styled.div`
 align-self: flex-end;
 background-color: #303030;
 color: white;
+height: 20vh
 width: 100vw;
 display: flex;
 justify-content: center;
-padding: 2rem 0;
+padding: 1.5rem 0;
 margin-top: 0rem;
 div {
     width: 80vw;
@@ -24,12 +25,13 @@ div {
         font-size: 1.1rem;
         color: #848484;
         font-weight: 400;
-        margin-bottom: .6rem;
+        margin-bottom: .5rem;
     }
 
     p {
         font-weight: 100;
         font-size: 0.8rem;
+        margin-bottom: 0.3rem;
     }
 }
 `;

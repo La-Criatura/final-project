@@ -3,6 +3,7 @@ import axios from 'axios'
 import SkillFilteredListTag from '../skills/SkillStyles/SkillFilteredListStyles'
 import SkillCard from '../skills/skill-card/SkillCard';
 import { Link } from 'react-router-dom';
+import { Container, Card } from "react-bootstrap"
 
 export default class CategoryDetails extends Component {
     constructor(props) {
@@ -25,24 +26,29 @@ export default class CategoryDetails extends Component {
 
 
     render() {
-        
+
         return (
-            <SkillFilteredListTag>
-                <ul>
-                    {this.state.listOfSkills.filter(skill =>
-                        skill.category === this.props.match.params.name
-                    ).map(skill => {
-                        return (
-                            <li key={skill._id}>
-                                <Link to={`/skills/${skill._id}`}>
-                                    <SkillCard theSkill={skill} />
-                                </Link> 
-                            </li>
-                        )
-                    })
-                    }
-                </ul>
-            </SkillFilteredListTag>
+            <div style={{ 'min-height': '40rem' }} className="mb-4">
+                <Container>
+                    <h1 className="display-4 font-weight-bold text-center my-3">Nuestro Catálogo de Habilidades de {this.props.match.params.name}</h1>
+                    <Container className="bg-light has-shadow py-4">
+                        <ul className="my-3 d-flex flex-wrap justify-content-center">
+                            {this.state.listOfSkills.filter(skill =>
+                                skill.category === this.props.match.params.name
+                            ).map(skill => {
+                                return (
+                                    <li key={skill._id}>
+                                        <Link to={`/skills/${skill._id}`}>
+                                            <SkillCard theSkill={skill} />
+                                        </Link>
+                                    </li>
+                                )
+                            })
+                            }
+                        </ul>
+                    </Container>
+                </Container>
+            </div>
         )
     }
 }

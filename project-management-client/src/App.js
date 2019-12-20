@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
+import { Container, Button } from "react-bootstrap"
 
 
 import SkillList from './components/skills/SkillList';
@@ -18,6 +19,7 @@ import SearchBoxResults from './components/search-box/SearchBoxResults';
 import CategoryDetails from './components/category/CategoryDetails';
 import Footer from './components/footer/Footer';
 import chat from './components/chat/chat';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -79,7 +81,15 @@ class App extends React.Component {
             <Route exact path='/login' render={() => <Login getUser={this.getTheUser} />} />
             <Route exact path='/' render={() => <Home />} />
             <Route exact path='/skills/category/:name' component={CategoryDetails} />
-            <Route exact path='/skills/:id' render={() => <h1>Tienes que registrate para entrar aquí</h1>} />
+            <Route exact path='/skills/:id' render={() => 
+              <Container className="my-5 d-flex align-items-center" style={{'min-height': '26rem'}}>
+                <Container className="has-shadow d-flex flex-column justify-content-center align-items-center py-5">
+                  <h1 className="display-4 font-weight-bold">Tienes que registrate para entrar aquí</h1>
+                  <p className="text-secondary font-size font-weight-normal">¿No tienes cuenta?</p>
+                  <Link to={"/signup"}><Button variant="outline-info mb-2">Regístrate</Button></Link>
+                </Container>
+              </Container>} 
+            />
           </Switch>
           <Footer />
         </div>

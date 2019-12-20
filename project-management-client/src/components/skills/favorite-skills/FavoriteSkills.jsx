@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 // import AuthService from '../../auth/auth-service';
 import axios from 'axios'
-import SkillCard from '../skill-card/SkillCard'
+import SkillCardB from '../skill-card/SkillCardB'
+import { Link } from 'react-router-dom';
 
 
 
@@ -33,7 +34,7 @@ export default class FavoriteSkills extends Component {
             <div className="bg-info text-white pt-2 px-2 rounded has-shadow">
                 <h1>Favoritos</h1>
                 <ul className="has-scroll-overflow">
-                    {this.state.user.favourites.map((skill, idx) => <li key={idx} className="mb-3"><SkillCard theSkill={skill}></SkillCard></li>)}
+                    {this.state.user.favourites.map((skill, idx) => <li key={idx} className="mb-3"><Link to={`/skills/${skill._id}`}><SkillCardB theSkill={skill}></SkillCardB></Link></li>)}
                 </ul>
             </div>
 
