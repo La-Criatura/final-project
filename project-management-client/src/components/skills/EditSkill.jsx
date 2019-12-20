@@ -51,6 +51,20 @@ class EditSkill extends Component {
       .catch(error => console.log(error))
   }
 
+  deleteSkill = () => {
+    const { params } = this.props.match;
+    axios
+      .delete(`${process.env.REACT_APP_URL}/skills/${params.id}`, {
+        withCredentials: true
+      })
+      .then(() => {
+        this.props.history.push("/skills"); // !!!
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   handleChangeTitle = (event) => {
     this.setState({
       title: event.target.value
@@ -113,9 +127,6 @@ class EditSkill extends Component {
           </div>
 
 
-
-
-
           <div className="form-group mb-4">
             <label className="font-weight-bold">Dirección</label>
             <LocationSearchInput className="selection-box" onAddressChange={this.handleAddressChange}></LocationSearchInput>
@@ -125,6 +136,10 @@ class EditSkill extends Component {
             <label className="font-weight-bold">Foto</label>
             <img className="mb-3 scaled-image" src={this.state.skillPicture} alt="" />
             <input className="form-control p-1" type="file" onChange={e => this.handleFileUpload(e)} />
+          </div>
+
+          <div className="pt-3">
+            <button className="btn btn-outline-danger col-12 mb-2" onClick={(e) => this.deleteSkill(e)}>Eliminar</button>
           </div>
 
           <input className="btn btn-dark col-12" type="submit" value="Actualizar" />
