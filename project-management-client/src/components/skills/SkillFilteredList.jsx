@@ -35,7 +35,7 @@ class SkillFilteredList extends Component {
           ).map(skill => {
             return (
               <li key={skill._id}>
-                <Link to={`/skills/${skill._id}`}>
+                <Link className="no-decoration" to={`/skills/${skill._id}`}>
                   <SkillCard theSkill={skill} />
                 </Link>
               </li>
