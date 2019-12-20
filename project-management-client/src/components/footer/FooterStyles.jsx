@@ -28,7 +28,6 @@ div {
     }
 
     p {
-        margin-bottom: 1rem;
         font-weight: 100;
         font-size: 0.8rem;
     }
