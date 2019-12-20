@@ -26,11 +26,12 @@ export default class CategoryDetails extends Component {
 
 
     render() {
-
+        let category = this.props.match.params.name;
+        category = category.charAt(0).toUpperCase() + category.slice(1)
         return (
             <div style={{ 'min-height': '40rem' }} className="mb-4">
-                <Container>
-                    <h1 className="display-4 font-weight-bold text-center my-3">Nuestro Catálogo de Habilidades de {this.props.match.params.name}</h1>
+                <Container className="mt-5">
+                    <h1 className="display-4 font-weight-bold text-center mb-5">Nuestro Catálogo de Habilidades de <spam className="text-info">{category}</spam></h1>
                     <Container className="bg-light has-shadow py-4">
                         <ul className="my-3 d-flex flex-wrap justify-content-center">
                             {this.state.listOfSkills.filter(skill =>

@@ -295,3 +295,14 @@ a:hover
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.has-growth {
+    width: 20rem;
+    
+    transition: all .5s ease;
+}
+
+.has-growth:hover {
+    width: 22rem;
+    
+}

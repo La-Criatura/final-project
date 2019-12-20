@@ -63,7 +63,6 @@ export default class Dashboard extends Component {
                         <div className="w-100 px-5">
                             <RandomSkillsList />
                         </div>
-
                         <Link className="btn btn-outline-warning" to='/skills' style={{ textDecoration: 'none' }}>Ver Más</Link>
                     </div>
                 </div>

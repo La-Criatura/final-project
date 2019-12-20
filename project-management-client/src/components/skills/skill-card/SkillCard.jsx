@@ -21,7 +21,7 @@ export default class SkillCard extends Component {
             //     <p>{this.props.theSkill.description}</p>
             // </SkillCardTag>
 
-            <Card style={{ width: '20rem' }} className="has-shadow m-2" >
+            <Card  className="has-shadow m-2 has-growth" >
                 <Card.Img style={{ height: '10rem', 'object-fit': 'cover'}} variant="top" src={this.props.theSkill.skillPicture} alt=""/>
                 <Card.Body>
                     <Card.Title className="text-body no-decoration">{this.props.theSkill.title}</Card.Title>
