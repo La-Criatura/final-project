@@ -1,5 +1,7 @@
 # Boomerang 
 Boomerang nace del deseo de poder compartir todas esas cosas que sabemos hacer, todas esas habilidades que tenemos y darles uso ayudando a otros a formarse en ellas dándote a la vez la oportunidad para conocer gente y ampliar tu grupo de contactos. Evitando así la monetización de las clases particulares y fomentando el compartir como estilo de vida.
+Las habilidades van desde actividades deportivas, hasta idiomas, pasando por clases particulares de asignaturas a diferentes idiomas, de cocina, de programación y mil cosas más, con idea de ampliarse hasta límites bastante grandes. El límite lo ponemos nosotros y todo lo que sabemos hacer.
+:basketball: :tennis:  :notebook_with_decorative_cover: :bar_chart: :computer: :surfer:
 
 ## Cómo funciona
 Para poder usar la aplicación es necesario registrarse como usuario de la misma. Una vez te registres puedes tanto modificar tu perfil de usuario, añadiendo foto o ciudad, como empezar a añadir habilidades a tu panel. 
